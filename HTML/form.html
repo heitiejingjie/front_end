@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>表单</title>
+    </head>
+    <body>
+        <h3>表单：</h3>
+        <p>表单标签有五种：form（表单）、input（输入）、textarea（文本框）、select（选项）、option（选项）</p>
+        <p>从外观上来划分可分为8种：</p>
+        <ul>
+            <li>单行文本框</li>
+            <li>多行文本框</li>
+            <li>密码文本框</li>
+            <li>单选框</li>
+            <li>多选框</li>
+            <li>按钮</li>
+            <li>下拉列表</li>
+            <li>文件上传</li>
+        </ul>
+
+        <form action="">
+            <input type="text" value="这是一个单行输入框"><br/>
+            <textarea name="" id="" cols="30" rows="3">这是一个多行文本框</textarea><br/>
+            <select name="" id="">
+                <option value="">HTML</option>
+                <option value="">CSS</option>
+                <option value="">JavaScript</option>
+            </select>
+        </form>
+
+        <hr/>
+        <h3>form标签：创建一个表单区域</h3>
+        <p>name属性：为一个单独的表单命名，区分不同的表单。</p>
+        <p>method属性：指定表单数据以哪一种http方法提交。有两种：“get”、“post”，一般使用post提交方法。</p>
+        <p>action属性：用于指定表单提交到哪一个地址进行处理。</p>
+        <p>target属性：用来指定窗口的打开方式。</p>
+        <p>enctype属性：指定表单数据提交的编码方式。</p>
+
+        <hr/>
+        <h3>input标签：用来实现具体的表单，自闭合标签</h3>
+        <p>type属性值：</p>
+        <ul>
+            <li>text：单行文本框</li>
+            <li>password：密码文本框</li>
+            <li>radio：单选框</li>
+            <li>checkbox：多选框</li>
+            <li>button/submit/reset：按钮</li>
+            <li>file：文件上传</li>
+        </ul>
+
+        <h4>type属性值：text为单行文本框</h4>
+        <!-- 常用属性 -->
+        <form >
+            <!-- value：设置单行文本框的默认值 -->
+            <!-- size：设置单行文本框的长度 -->
+            <!--  maxlenth：设置单行文本框的最大输入字符-->
+            姓名：<input type="text" value="殷浩" size="20" maxlength="10">      
+        </form>
+        
+
+
+    </body>
+</html>
