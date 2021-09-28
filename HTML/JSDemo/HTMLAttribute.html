@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta name="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML属性</title>
+    <style>
+        .test {
+            color: red;
+        }
+    </style>
+    <script>
+        /*
+                有两种操作html属性的方式：
+                    一、使用“对象属性”
+                    二、使用“对象方法”
+                不管是对象属性还是对象方法，都有两种操作：
+                    1、获取HTML属性
+                        1、属性获取符（。）
+                        2、属性获取方法（getAttribute（））
+                        注意：当需要获取自定义属性时，使用属性获取方法来获取某个元素的属性
+                    2、设置HTML属性
+                        1、赋值
+                        2、属性设置方法（setAttribute（））
+                        注意：当需要设置自定义属性时，使用属性设置方法来设置某个元素的属性
+                删除属性：
+                    1、将属性的值设置为空
+                    2、将属性直接移除（removeAttribute（））
+                判断元素是否含有某个属性：
+                    hasAttribute（）
+                
+                总结：
+                    （1）“对象属性方式”和“对象方法方式”，这两种方式都不仅可以操作静态HTML的属性，也可以操作动态DOM的属性。
+                    （2）只有“对象方法方式”才可以操作自定义属性。
+ 
+                    Dom对象指的就是获取的元素
+
+                css属性操作：
+                    获取css属性：
+                    设置css属性：
+        */
+        window.onload = function () {
+
+            // 不仅可以获取静态HTML属性，还可以获取动态的HTML属性
+            var oinput2 = document.createElement("input");
+            oinput2.id = "btn2";
+            oinput2.className = "dynamic_button";
+            oinput2.type = "button";
+            oinput2.value = "动态";
+            document.body.appendChild(oinput2);
+            oinput2.onclick = function () {
+                alert(oinput2.className);
+            }
+
+            // 获取文本框的值
+            var text1 = document.getElementById("txt");
+            var textarea = document.getElementById("textarea");
+            var oinput = document.getElementById("btn");
+
+            // 获取单选框的值
+            var oradios = document.getElementsByName("fruit");
+
+            // 获取多选框的值
+            var oselect = document.getElementById("select");
+
+            var opic = document.getElementById("pic");
+            var flag = true;
+
+            // 删除属性
+            var ops = document.getElementsByTagName("p");
+
+            oinput.onclick = function () {
+                // alert(textarea.value);
+                // for (var i = 0; i < oradios.length; i++) {
+                //     if (oradios[i].checked == true) {
+                //         alert(oradios[i].value);
+                //     }
+                // }
+
+                // alert(oselect.value);
+
+                // if (flag) {
+                //     opic.src = "../../image/xuezhixaixuenai.png";
+                //     flag = false;
+                // }
+                // else{
+                //     opic.src = "../../image/youbibinjieyi.jpg"
+                //     flag = true;
+                // }
+
+                // alert(text1.getAttribute("myid"));
+
+                // ops[0].removeAttribute("class");
+               if (ops[0].hasAttribute("class")) {
+                ops[0].removeAttribute("class"); 
+               }
+            }
+
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="txt" value="" myid="就是我">
+    <br />
+    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    <br />
+    <input type="radio" name="fruit" id="" value="苹果" checked>苹果
+    <input type="radio" name="fruit" id="" value="香蕉">香蕉
+    <input type="radio" name="fruit" id="" value="梨子">梨子
+    <input id="btn" class="get_button" type="button" value="获取">
+    <br />
+    <select name="" id="select">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+        <option value="重庆">重庆</option>
+    </select>
+
+    <img src="../../image/youbibinjieyi.jpg" id="pic">
+
+    <p class="test">没有什么能够阻挡，我对自由的向往。</p>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-style" content="text/html;charset=utf-8">
+        <title>列表项符号</title>
+        <style>
+            ol{
+                list-style-type:lower-alpha;
+            }
+            ul{
+                list-style-type:armenian;
+            }
+
+            #study{
+                list-style-type: none;
+            }
+
+            #study a{
+                text-decoration: none;
+                color: hotpink;
+                text-transform: capitalize;
+            }
+            div{
+                border:1px dashed black
+            }
+        </style>
+    </head>
+    <body>
+        <h3>列表项符号：list-style-type属性来定义符号</h3>
+        <h4>有序列表</h4>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+        <h4>无序列表</h4>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <hr/>
+        <h3>list-style-image属性可以将列表项的序号替换成一张图片</h3>
+
+        <hr/>
+        <h3>练习</h3>
+        <div>
+            <ul id="study">
+                <li><a href="https://www.baidu.com" target="_blank">top1：百度</a></li>
+                <li><a href="https://www.taobao.com" target="_blank">top2：淘宝</a></li>
+                <li><a href="https://www.sina.com" target="_blank">top3：新浪</a></li>
+                <li><a href="https://www.163.com" target="_blank">top4：网易</a></li>
+                <li><a href="https://www.souhu.com" target="_blank">top5：搜狐</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </body>
+</html>

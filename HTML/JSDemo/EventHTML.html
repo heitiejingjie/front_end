@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>事件</title>
+        <style>
+            #div1{
+                width: 80px;
+                height: 24px;
+                line-height:24px;
+                font-family: 微软雅黑;
+                font-size: 15px;
+                text-align: center;
+                border-radius: 3px;
+                background-color: deepskyblue;
+                color: white;
+                cursor: pointer;
+            }
+            #div1:hover{
+                background-color: dodgerblue;
+            }
+            #search{
+                color: #dddddd;
+            }
+        </style>
+        <script>
+
+            // var oBtn3 = document.getElementById("btn3");
+            // oBtn3.onclick = function()
+            // {
+            //     alert("会出错吗");
+            // }
+            /*
+                事件的组成部分：
+                    1、事件的主体：是何种元素
+                    2、事件的类型：是点击还是移动还是其他的呢？
+                    3、事件的行为：这个事件都发生了什么
+                
+                常见的事件：
+                    1、鼠标事件
+                    2、键盘事件
+                    3、表单事件
+                    4、编辑事件
+                    5、页面事件
+                
+                事件的调用方式：
+                    1、在scrpt（）中调用
+                    2、在元素中调用
+            */
+
+            /*
+                事件的调用方式
+                一、在script标签中调用
+            */
+
+            function alertMes()
+            {
+                alert("绿叶学习网");
+            }
+
+            window.onload = function()
+            {
+                alert("欢迎来到网站");
+
+
+
+                var oBtn = document.getElementById("btn");
+                oBtn.onclick = function()
+                {
+                    alert("绿叶学习网");
+                }
+
+                 /*
+                鼠标事件：
+                    1、onclick：鼠标单击事件
+                    2、onmouseover：鼠标移入事件
+                    3、onmouseout：鼠标移出事件
+                    4、onmousedown：鼠标按下事件
+                    5、onmouseup：鼠标松开事件
+                    6、onmousemove：鼠标移动事件
+                */
+
+                // 一、鼠标点击事件
+                var oDiv = document.getElementById("div1");
+                oDiv.onclick = function()
+                {
+                    alert("哈哈哈哈，就是我");
+                }
+
+                // 鼠标移入、移出事件
+                var oP = document.getElementsByClassName("content");
+                oP[0].onmouseover = function()
+                {
+                    this.style.color = "red";
+                }
+                oP[0].onmouseout = function()
+                {
+                    this.style.color = "green";
+                }
+
+                var oSelect = document.getElementById("language");
+                oSelect.onmouseover = function()
+                {
+                    this.setAttribute("size", 6);
+                }
+                oSelect.onmouseout = function()
+                {
+                    this.setAttribute("size", 0);
+                }
+
+                // 鼠标按下、松开事件
+                var oH1 = document.getElementsByTagName("h1");
+                var oBtn2 = document.getElementById("btn2");
+                oBtn2.onmousedown = function()
+                {
+                    oH1[0].style.color = "green";
+                }
+                oBtn2.onmouseup = function()
+                {
+                    oH1[0].style.color = "blank";
+                }
+
+                // 二、键盘事件
+                // 共有两种：键盘按下和键盘松开
+                var oText = document.getElementById("txt");
+                var oNum = document.getElementById("num");
+                oText.onkeyup = function()
+                {
+                    var str = oText.value;
+                    oNum.innerHTML = str.length;
+                }
+
+                var oText2 = document.getElementById("txt2");
+                var oContent = document.getElementById("content");
+                var regex = /^[0-9]*$/;
+                oText2.onkeyup = function()
+                {
+                    var str = oText2.value;
+                    if (regex.test(str)) {
+                        oContent.innerHTML = "输入正确";
+                    } else{
+                        oContent.innerHTML = "必须输入数字";
+                    }
+                }
+
+                // 三、表单事件
+                // 一般有三种：
+                // 1、onfocus（获取焦点时触发事件）和onblur（失去焦点时触发事件）   
+                // 2、onselect
+                // 3、onchange   
+                // 4、onsubmit   提交
+
+                // 1、焦点事件：只有两种元素有焦点事件：判断一个元素是否有焦点事件，打开页面，点击Tab键，能够选中的就是焦点事件
+                //      1、表单元素（单选框、复选框、单行文本框、多行文本框、下拉列表）
+                //      2、超链接
+                //获取元素对象
+                var oSearch = document.getElementById("search");
+                oSearch.focus();   // 使用focus（）可以在进入页面时，直接聚焦元素
+                //获取焦点
+                oSearch.onfocus = function () 
+                {
+                    if (this.value == "百度一下，你就知道") 
+                    {
+                        this.value = "";
+                    }
+                };
+                //失去焦点
+                oSearch.onblur = function () 
+                {
+                    if (this.value == "") 
+                    {
+                        this.value = "百度一下，你就知道"; 
+                    }
+                };
+
+                // 2、onselect事件：适用于单行文本框和多行文本框
+                var oOniline = document.getElementById("txt3");
+                var oMultiLine = document.getElementById("txt4");
+
+                oOniline.onselect = function()
+                {
+                    alert("你选中单行文本框");
+                }
+                oMultiLine.onselect = function()
+                {
+                    alert("你选中多行文本框");
+                }
+
+                // 当需要点击文本框全选文本时，使用select（）
+                var oOniline2 = document.getElementById("txt5");
+                oOniline2.onclick = function()
+                {
+                    this.select();
+                }
+
+                // 3、onchange：具有多个选项的表单元素
+                // 1、单选框选择某一项时触发
+                var ofruit = document.getElementsByName("fruit");
+                var oP = document.getElementById("s1");
+
+                // for(var i = 0; i < ofruit.length; i++)
+                // {
+                //     ofruit[i].onchange = function()
+                //     {
+                //         if(this.checked)
+                //         {
+                //             oP.innerHTML = "你选择的是：" + this.value;
+                //         }
+                //     }
+                // }
+
+                var oselectall = document.getElementById("selectall");
+
+                oselectall.onchange = function()
+                {
+                    if(this.checked)
+                    {
+                        for(var i = 0; i < ofruit.length; i++)
+                        {
+                            ofruit[i].checked = true;
+                        }
+                    }else
+                    {
+                        for(var i = 0; i < ofruit.length; i++)
+                        {
+                            ofruit[i].checked = false;
+                        }
+                    }
+                }
+
+                var oList = document.getElementById("list");
+
+                oList.onchange = function()
+                {
+                    var link = this.options[this.selectedIndex].value;  // selectedIndex是下拉列表的独有选项
+                    window.open(link);
+                }
+
+                // 三、编辑事件
+                // 1、oncopy： 防止页面内容被复制
+                // document.body.oncopy = function()
+                // {
+                //     return false;
+                // }
+                // 2、onselectstart: 防止页面内容被选取
+                // document.body.onselectstart = function()
+                // {
+                //     return false;
+                // }
+                // 3、oncontextmemu：禁止鼠标右键
+                document.body.oncontextmenu = function()
+                {
+                    return false;
+                }
+
+                // 四、页面事件
+                // 常用的页面事件：onload和onbeforunload
+                // 1、onload事件：文档加载完成后在执行事件
+                
+                // 2、onbeforeunload事件：离开页面之前触发事件
+            };
+            window.onbeforeunload = function(e)
+            {
+                e.returnValue = "欢迎下次再来";
+            }
+           
+
+        </script>
+    </head>
+    <body>
+        <input type="button" id="btn" value="弹出"><br/>
+        <!-- 在标签中调用事件 -->
+        <input type="button" value="弹出2" onclick="alertMes()"><br/>
+        <div id="div1">调试按钮</div>
+        <p class="content">绿叶学习网</p>
+        <select name="语言" id="language" size="0">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Vue.js">Vue.js</option>
+            <option value="Node.js">Node.js</option>
+            <option value="HTML5">HTML5</option>
+            <option value="HTML5">HTML5</option>
+        </select>
+
+        <h1>绿叶学习网</h1>
+        <hr/>
+        <input type="button" id="btn2" value="演示"><br/>
+
+        <input type="text" name="" id="txt">
+        <div>文本的长度是：<span id="num">0</span></div>
+        <input type="text" name="" id="txt2">
+        <div id="content" style="color: rgb(194, 108, 108);"></div>
+
+        <input type="text" name="" id="search" value="百度一下，你就知道">
+        <input type="button" value="搜索"><br/>
+
+        <input type="text" name="" id="txt3" value="你站在桥上看风景，看风景的人在楼上看你"><br/>
+        <textarea name="" id="txt4" cols="30" rows="10">你站在桥上看风景，看风景的人在楼上看你</textarea><br/>
+
+        <input type="text" name="" id="txt5" value="我要全选文本">
+
+        <p><label for=""><input type="checkbox" name="" id="selectall">全选/反选：</label></p>
+        <label for=""><input type="checkbox" name="fruit" id="" value="苹果">苹果</label>
+        <label for=""><input type="checkbox" name="fruit" id="" value="香蕉">香蕉</label>
+        <label for=""><input type="checkbox" name="fruit" id="" value="西瓜">西瓜</label>
+        <p id="s1"></p>
+
+        <select name="" id="list">
+            <option value="http://www.baidu.com">百度</option>
+            <option value="http://www.sina.com">新浪</option>
+            <option value="http://www.qq.com">腾讯</option>
+            <option value="http://www.sohu.com">搜狐</option>
+        </select>
+
+        <p id="p1">任务进度已更新</p>
+
+        <input type="button" value="提交" id="btn3">
+</html>

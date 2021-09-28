@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>超链接伪类</title>
+        <style>
+            table,tr,th,td{
+                border:black solid 1px;
+                border-collapse: collapse;
+            }
+            caption{
+                font-weight: bold;
+            }
+            a{
+                text-decoration: none;
+            }
+            a:link{
+                color: cadetblue;
+            }
+            a:visited{
+                color: chartreuse;
+            }
+            a:hover{
+                color: crimson;
+            }
+            a:active{
+                color: darkmagenta;
+            }
+           
+            div{
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: white;
+                background-color: green;
+            }
+
+            .my_div:hover{
+                background-color: teal;
+            }
+            img:hover{
+                border:tomato solid 1px;
+            }
+            .div_default{
+                cursor: default;
+            }
+            .div_pointer{
+                /* 浏览器鼠标样式 */
+                /* cursor: pointer; */
+                
+                /* 自定义鼠标样式 */
+                /* cursor: url(), 属性值; */
+
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>超链接伪类</caption>
+            <thead>
+                <tr>
+                    <th>伪类</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a:link（未访问）</td>
+                    <td>未访问时超链接的样式</td>
+                </tr>
+                <tr>
+                    <td>a:visited（访问后）</td>
+                    <td>访问后超链接的样式</td>
+                </tr>
+                <tr>
+                    <td>a:hover(悬停时)</td>
+                    <td>悬停时超链接的样式</td>
+                </tr>
+                <tr>
+                    <td>a:active（活动时）</td>
+                    <td>活动时超链接的样式</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="https://www.baidu.com">百度首页</a>
+
+        <hr/>
+        <h3>深入：hover伪类：鼠标悬停在元素上时的样式</h3>
+        <div class="my_div">我的</div>
+        <img src="../../image/biqigubafan.jpg" alt="比企谷八幡" title="比企谷八幡">
+
+        <hr/>
+        <h3>鼠标样式：</h3>
+        <p>浏览器鼠标样式：使用cursor属性</p>
+        <p>1、属性值：default</p>
+        <p>2、属性值：pointer</p>
+        <p>3、属性值：text</p>
+        <div class="div_default">鼠标默认样式</div>
+        <div class="div_pointer">鼠标点击样式</div>
+    </body>
+</html>

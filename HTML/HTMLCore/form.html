@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>表单</title>
+    </head>
+    <body>
+        <h3>表单：</h3>
+        <p>表单标签有五种：form（表单）、input（输入）、textarea（文本框）、select（选项）、option（选项）</p>
+        <p>从外观上来划分可分为8种：</p>
+        <ul>
+            <li>单行文本框</li>
+            <li>多行文本框</li>
+            <li>密码文本框</li>
+            <li>单选框</li>
+            <li>多选框</li>
+            <li>按钮</li>
+            <li>下拉列表</li>
+            <li>文件上传</li>
+        </ul>
+
+        <form action="">
+            <input type="text" value="这是一个单行输入框"><br/>
+            <textarea name="" id="" cols="30" rows="3">这是一个多行文本框</textarea><br/>
+            <select name="" id="">
+                <option value="">HTML</option>
+                <option value="">CSS</option>
+                <option value="">JavaScript</option>
+            </select>
+        </form>
+
+        <hr/>
+        <h3>form标签：创建一个表单区域</h3>
+        <p>name属性：为一个单独的表单命名，区分不同的表单。</p>
+        <p>method属性：指定表单数据以哪一种http方法提交。有两种：“get”、“post”，一般使用post提交方法。</p>
+        <p>action属性：用于指定表单提交到哪一个地址进行处理。</p>
+        <p>target属性：用来指定窗口的打开方式。</p>
+        <p>enctype属性：指定表单数据提交的编码方式。</p>
+
+        <hr/>
+        <h3>input标签：用来实现具体的表单，自闭合标签，单选框</h3>
+        <p>type属性值：</p>
+        <ul>
+            <li>text：单行文本框</li>
+            <li>password：密码文本框</li>
+            <li>radio：单选框</li>
+            <li>checkbox：多选框</li>
+            <li>button/submit/reset：按钮</li>
+            <li>file：文件上传</li>
+        </ul>
+
+        <!-- 常用属性 -->
+        <form method="POST" class="input">
+            <!-- value：设置单行文本框的默认值 -->
+            <!-- size：设置单行文本框的长度 -->
+            <!--  maxlenth：设置单行文本框的最大输入字符-->
+            <strong><em>输入框：type属性值为text</em></strong><br/>
+            <!-- 输入框 -->
+            姓名：<input type="text" value="" size="20" maxlength="50"><br/>      
+            <br/>
+
+            <!-- 密码输入框 -->
+            <strong><em>密码输入框：type属性值为password</em></strong><br/>
+            密码：<input type="password" size="20" maxlength="20" ><br/>
+            <br/>
+
+            <!-- 单选框：若需要选中某个选项，在input标签内输入checked属性，单选框的name属性是划分不同单选框组 -->
+            <strong><em>单选框：type属性值为radio，若需要选中某个选项，在input标签内输入checked属性，单选框的name属性是划分不同单选框组</em></strong><br/>
+            性别：<input type="radio" name="Gender" value="男" checked>男
+            <input type="radio" name="Gender" value="女">女<br/>
+            <br/>
+
+            <!-- 复选框：除了选择的个数不同，其他与单选框一致 -->
+            <strong><em>复选框：type属性值为checkbox，除了选择的个数不同，其他与单选框一致</em></strong><br/>
+            喜欢的音乐：
+            <input type="checkbox" name="music" value="有何不可" checked>有何不可
+            <input type="checkbox" name="music" value="雅俗共赏">雅俗共赏
+            <input type="checkbox" name="music" value="素颜" >素颜
+            <input type="checkbox" name="music" value="乌鸦" checked>乌鸦<br/>
+            <br/>
+
+            <!-- 按钮 -->
+            <strong><em>普通按钮：type属性值为button，配合javascript来进行操作的</em></strong><br/> 
+            <input type="button" value="普通按钮" ><br/>
+            <strong><em>提交按钮：type属性值为submit，用来给服务器提交数据，只能提交它所在form标签中的内容</em></strong><br/>
+            <input type="submit" value="提交按钮"><br/>
+            <strong><em>重置按钮：type属性值为reset，用来清除用户在表单中的数据，只能清空它所在form标签中的内容</em></strong><br/>
+            <input type="reset" value="重置按钮"><br/>
+            <br/>
+
+            <!-- 文件上传 -->
+            <strong><em>文件上传：type属性值为file</em></strong><br/>
+            文件上传：<input type="file" value="文件上传">
+        </form>
+        
+        <hr/>
+        <h3>textarea标签：可以输入多行文本</h3>
+        <form action="" method="POST" class="textarea">
+            个人简介：<br/>
+            <textarea name="" id="" cols="30" rows="10" value="">我就是我</textarea>
+        </form>
+
+        <hr/>
+        <h3>下拉列表：由select和option标签组成</h3>
+        <form action="" method="POST">
+            <h4>select标签属性值：</h4>
+            <strong><em>multiple：设置下拉选项可以选择多项</em></strong><br/>
+            <strong><em>size：设置可以显示几个列表项</em></strong><br/>
+            <select>
+                <h4>option标签属性值：</h4>
+                <strong><em>selected：设置是否选中</em></strong>
+                <strong><em>value：选项值</em></strong>
+                <option value="">HTML</option>
+                <option value="">CSS</option>
+                <option value="">JavaScript</option>
+                <option value="">note.js</option>
+                <option value="">Vue.js</option>
+            </select>
+        </form>
+
+
+    </body>
+</html>

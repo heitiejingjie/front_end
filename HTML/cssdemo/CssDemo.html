@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>css演示</title>
+        <style type="text/css">
+            div.title{
+                color: green;
+                font-size: 17px;
+            }
+            div.body{
+                color: red;
+                font-size: 14px;
+            }
+
+            #first{
+                font-size: 20px;
+                color: hotpink;
+            }
+
+            .secend{
+                color:lightseagreen;
+                font-size: 18px;
+            }            
+
+            p.study{
+                font-size: 14px;
+                font-weight: bold;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="title">&nbsp;&nbsp;&nbsp;悯农</div>
+        <div class="body">
+        锄禾日当午<br/>
+        汗滴禾下土<br/>
+        谁知盘中餐<br/>
+        粒粒皆辛苦<br/>
+        </div>
+        
+        <h3>引入外部演示表：使用link标签</h3>
+        <p>rel属性值：固定值，取stylesheet，表示引入样式表文件</p>
+        <p>type属性值：固定值，取text/css，表示标准的css</p>
+        <p>href属性值：表示css文件的路径</p>
+        <link rel="stylesheet" type="text/css" href="../css/first.css">
+
+        <hr/>
+        <h3>元素的id和class</h3>
+        <h4>测试id的属性：id属性同个页面只能出现一个相同的id属性</h4>
+        <div id="first">这是测试id的属性</div>
+        <p id="first">这也是一个相同的id属性</p>
+
+        <h4>测试class属性：同个页面可以出现同个相同的class属性</h4>
+        <div class="secend">这是测试class属性</div>
+        <span class="secend">this is test class element</span>
+
+        <hr/>
+        <h3>css选择器</h3>
+        <p>常见的五种：</p>
+        <ol>
+            <li><strong>元素（标签）选择器：</strong>选中相同的元素（标签）</li>
+            <li><strong>id选择器：</strong>选中设置了id属性值的元素</li>
+            <li><strong>class选择器：</strong>选中定义相同class属性值的元素</li>
+            <li><strong>后代选择器：</strong>选择元素内部中所有的同一种元素，包括子元素和其他后代元素</li>
+            <li><strong>群组选择器：</strong>同时对几个选择器进行相同的操作</li>
+        </ol>
+
+        <hr/>
+        <h3>字体样式：</h3>
+        <p>常见的设置：</p>
+        <ol>
+            <li>font-family：字体的类型</li>
+            <li>font-size：字体的大小</li>
+            <li>font-weight：字体的粗细</li>
+            <li>font-style：字体的风格</li>
+            <li>color：字体的颜色</li>
+        </ol>
+
+        <hr/>
+        <h3>练习</h3>
+        <p class="study">“有规划的人生叫蓝图，没规划的人叫拼图”</p>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>链接</title>
+    </head>
+    <body>
+        <h3>超链接：使用a标签来标记超链接</h3>
+        <p>可以使用文字标记超链接，也可以使用图片标记超链接</p>
+        <!-- 文字标记 -->
+        <a href="https://www.bilibili.com" target="_blank">哔哩哔哩首页</a>
+        <br/>
+        <!-- 图片标记 -->
+        <a href="https://www.baidu.com"><img src="../image/youbibinjieyi.jpg" alt="由比滨结衣" height="200px" width="200px"></a>
+
+        <h4>target属性：用来定义超链接打开窗口的方式</h4>
+        <p>有四个属性值：</p>
+        <p>_self：默认打开方式，在本窗口打开新链接</p>
+        <p>_blank：在新窗口打开新链接</p>
+        <p>_parent：在父窗口打开新链接</p>
+        <p>_top：在顶层窗口打开新链接</p>
+
+        <hr/>
+        <h3>内部链接</h3>
+        <a href="./list.html" target="_blank">内部列表页面</a>
+
+        <hr/>
+        <h3>锚点链接：定义网页的某个位置</h3>
+        <div>
+            <a href="#article">推荐文章</a><br/>
+            <a href="#music">推荐音乐</a><br/>
+            <a href="#TV">推荐电视剧</a><br/>
+        </div>
+        ---------<br/>
+        ---------<br/>
+        ---------<br/>
+        ---------<br/>
+        ---------<br/>
+        <div id="article">
+            <h3>推荐的文章</h3>
+            <ul>
+                <li>诗经：蒹葭</li>
+                <li>李白：将进酒</li>
+                <li>岑参：白雪歌送武判官归京</li>
+            </ul>
+        </div>
+        <div id="music">
+            <h3>推荐音乐</h3>
+            <ul>
+                <li>许嵩：别咬我</li>
+                <li>许嵩：假摔</li>
+                <li>许嵩：断桥残雪</li>
+            </ul>
+        </div>
+        <div id="TV">
+            <h3>推荐电视剧</h3>
+            <ul>
+                <li>大秦帝国</li>
+                <li>神探狄仁杰</li>
+                <li>少年包青天</li>
+            </ul>
+        </div>
+    </body>
+</html>

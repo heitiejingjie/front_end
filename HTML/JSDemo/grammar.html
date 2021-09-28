@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=google">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js语法</title>
+    <script>
+        var a = 10;
+        a++;
+        document.write(a);
+        document.write("<br/>");
+        var str = "就是我";
+        document.write(str);
+        document.write("<br/>");
+        var n;
+        document.write(n);
+        document.write("<br/>");
+
+        var i = 1;
+        // var j = i++;
+        var j = ++i;
+        document.write("i = ", i);
+        document.write("<br/>");
+        document.write("j = ", j);
+
+        document.write("<br/>")
+        var b = Number("2018") + 1000;
+        document.write(b);
+
+        /*
+        一、将字符串转换为数字
+        */
+
+        // number（）只能转换纯数字
+        document.write("<br/>")
+        document.write("Number(100): " + Number("100") + "<br/>");
+        document.write("Number(3.14159): " + Number("3.14159") + "<br/>");
+        document.write("Number(hao123): " + Number("hao123") + "<br/>");
+        document.write("Number(100px): " + Number("100px") + "<br/>");
+
+        // ParseInt()能转换字符串首字符为数字的字符，直到遇到非数字字符为止，除了“-”和“+”号
+        document.write("<br/>")
+        document.write("ParseInt(100): " + parseInt("100") + "<br/>");
+        document.write("ParseInt(3.14159): " + parseInt("3.14159") + "<br/>");
+        document.write("ParseInt(hao123): " + parseInt("hao123") + "<br/>");
+        document.write("ParseInt(100px): " + parseInt("100px") + "<br/>");
+        document.write("ParseInt(+100): " + parseInt("+100") + "<br/>");
+        document.write("ParseInt(-100): " + parseInt("-100") + "<br/>");
+
+        /*
+        二、将数字转换为字符串
+        */
+        // 将数字与空字符串相加
+        var d = 2018 + "";
+        document.write(d + 1000);
+
+        document.write("<br/>")
+        // 使用tostring（）函数
+        var e = 2018;
+        document.write(e.toString() + 1000);
+
+        alert("锄禾日当午，\n汗滴禾下土。\n谁知盘中餐，\n粒粒皆辛苦")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

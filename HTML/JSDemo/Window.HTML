@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Window对象</title>
+        <style>
+            div{
+                width: 200px;
+                height: 100px;
+                border: solid 1px green;
+            }
+        </style>
+        <SCript>
+            /* 
+            总叙：
+                在JavaScript中，一个浏览器窗口就是一个window对象
+                window对象存放了这个页面的所有信息，window对象又分为很多子对象
+                window的子对象：
+                    document：文档对象，用于操作页面元素
+                    lacation：地址对象，用于操作URL地址
+                    navigator：浏览器对象，用于获取浏览器版本信息
+                    history：历史对象，用于操作浏览历史
+                    screen：屏幕对象，用于操作屏幕宽度、高度
+                概括：一个窗口就是一个window对象，这个窗口里面的HTML文档就是一个document对象，document对象是window对象的一个子对象
+                window子对象，除document对象的其他子对象统称为BOM（browser object module 浏览器对象模型）
+                可以把window子对象看成是window对象的一个属性
+                window对象也有很多的属性和方法
+            */
+            
+        
+            window.onload = function()
+            {
+                 /* 
+                    一、窗口操作：
+                        1、打开窗口：使用open（）方法实现打开窗口操作，直属于windo对象  
+                        2、关闭窗口：使用close（）方法实现，直属于window对象
+                 */
+                var oBaidu = document.getElementById("btn");
+                var oClose = document.getElementById("btn2");
+
+                // 打开窗口
+                var oNewWindow = null;
+                oBaidu.onclick = function()
+                {
+                    // window.open("http://www.baidu.com", "_blank");
+                    
+                    oNewWindow = window.open();    // 打开一个空白窗口
+                    oNewWindow.document.write("这是一个新的空白窗口");
+                    oNewWindow.document.body.style.backgroundColor = "deepskyblue";
+                }
+                // 关闭新打开的窗口
+                oClose.onclick = function()
+                {
+                    oNewWindow.close();
+                }
+
+                // 关闭当前窗口
+                var oCurrentClose = document.getElementById("btn3");
+                oCurrentClose.onclick = function()
+                {
+                    window.close();
+                } 
+                
+                /* 
+                    二、对话框：
+                        1、alert（）方法：一般仅仅用于提示文字，直属于window对象
+                        2、comfirm（）方法：不仅提示文字，还可以用于确认，会返回true或false，直属于womdow对象
+                        3、prompt（）方法：不仅提示文字，还可以用于输入，返回一个字符串，直属于window对象
+                */
+                // alert（）方法
+                var oAlert = document.getElementById("btn4");
+                oAlert.onclick = function()
+                {
+                    alert("唉，你真的点击了我！");
+                }
+
+                // comfirm（）方法
+                var oComfirm = document.getElementById("btn5");
+                oComfirm.onclick = function()
+                {
+                    if(window.confirm("你确认要跳转到b站首页吗"))
+                    {
+                        window.location.href = "https://www.bilibili.com";
+                    } else
+                    {
+                        document.write("你取消了跳转");
+                    }
+                }
+
+                // prompt（）方法
+                var oPrompt = document.getElementById("btn6");
+                oPrompt.onclick = function()
+                {
+                    var name = window.prompt("你的名字是：", null);
+                    document.write(name);
+                }
+
+                /* 
+                    三、定时器：用两组方法实现
+                        1、settimeout（）和cleartimeout（）：
+                            settimeout（code，time）：一次性的调用函数
+                            cleartimeout（）：取消执行settimeout（）
+                        2、setinterval（）和clearinterval（）：
+                            setinterval（code，time）：可以重复的代用code中的代码
+                            clearinterval（）：取消执行setinterval（）
+                */
+
+                // 1、
+                // window.setTimeout(function(){alert("欢迎你！")}, 2000);
+
+                var oTimer = document.getElementsByClassName("timer");
+                var timer = null;
+                oTimer[0].onclick = function()
+                {
+                    timer = window.setTimeout(function(){alert("欢迎来到我的页面")}, 2000);
+                }
+                oTimer[1].onclick = function()
+                {
+                    window.clearTimeout(timer);
+                }
+
+                // 2、
+                var n = 5;
+
+                window.setInterval(Mes, 1000);
+
+                function Mes()
+                {
+                    if(n > 0)
+                    {
+                        n--;
+                        document.getElementById("num").innerHTML = n;
+                    }
+                }
+
+                var oColor = document.getElementsByClassName("timer2");
+                var odiv = document.getElementsByTagName("div")[0];
+                var colors = ["red", "green", "deepskyblue", "lightskyblue", "blank", "yellow", "orange"];
+                var i = 0;
+                var timer2 = null;
+                // 当不停的点击时，会不停的新开setinterval（），需要在每次点击时，清除上次新开的setinterval（）
+                oColor[0].onclick = function()
+                {
+                    window.clearInterval(timer2);
+                    timer2 = window.setInterval(function()
+                    {
+                        odiv.style.backgroundColor = colors[i];
+                        i++;
+                        i = i % colors.length;   // 可以使数字不停的循环
+                    }, 1000);
+                }
+                oColor[1].onclick = function()
+                {
+                    window.clearInterval(timer2);
+                }
+
+                /* 
+                    四、location子对象：用来操作当前窗口的URL，所谓的URL，指的就是页面地址，主要的有三个属性：
+                        1、href属性：当前的页面地址
+                        2、search属性：当前页面地址”？“后面的内容
+                        3、hash属性：当前页面地址“#”后面的内容
+                */
+
+                // 1、href属性：用来设置或获取当前页面地址
+
+                var url = window.location.href;
+                document.write("当前页面地址是：" + url + "<br/>");
+
+                // 2、search属性：用来设置或获取当前页面地址“？”后面的内容，一般用于数据库查询
+                document.write(window.location.search + "<br/>");
+
+                // 3、hash属性：用来设置或获取当前页面地址“#”后面的内容，一般用于锚点链接
+                document.write(window.location.hash + "<br/>");
+
+                /* 
+                    五、navigator子对象：用来获取浏览器的类型
+                */
+               alert(window.navigator.userAgent);
+
+               
+
+
+
+                
+
+                
+
+            }
+                
+        </SCript>
+    </head>
+    <body>
+        <input type="button" value="百度首页" id="btn">
+        <input type="button" value="关闭新窗口" id="btn2">
+        <input type="button" value="关闭当前窗口" id="btn3">
+        <input type="button" value="提示文字" id="btn4">
+        <input type="button" value="确认文字" id="btn5">
+        <input type="button" value="返回文字" id="btn6">
+
+        <p>2秒后执行欢迎语</p>
+
+        <input type="button" value="确认" class="timer">
+        <input type="button" value="取消" class="timer">
+
+        倒计时：<p id="num">5</p>
+
+        <input type="button" value="开始" class="timer2">
+        <input type="button" value="结束" class="timer2">
+        <div></div>
+    </body>
+</html>

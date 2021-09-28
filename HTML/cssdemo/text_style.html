@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-style" content="text/html;charset=utf-8"> 
+        <title>文本样式</title>
+        <style>
+            /* 首行缩进演示 */
+            p.first{
+                text-indent: 2em;
+            }
+
+            #demo caption{
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            /* 文本居中演示 */
+            .secend #tital,.secend .body{
+                text-align: center;
+            }
+
+            /* 上、中、下划线演示 */
+            .underline{
+                text-decoration: underline;
+            }
+            .delete{
+                text-decoration: line-through;
+            }
+            .top{
+                text-decoration: overline;
+            }
+
+            /* 大小写转换演示 */
+            p.uppercase{
+                text-transform: uppercase;
+            }
+            p.lowercase{
+                text-transform: lowercase;
+            }
+            p.capitalize{
+                text-transform: capitalize;
+            }
+
+            /* 行高演示 */
+            p.p1{
+                line-height: 25px;
+            }
+            p.p2{
+                line-height: 35px;
+            }
+            p.p3{
+                line-height: 45px;
+            }
+
+            /* 字间距 */
+            p.lsp1{
+                letter-spacing: 3px;
+            }
+            p.lsp2{
+                letter-spacing: 5px;
+            }
+            p.lsp3{
+                letter-spacing: 7px;
+            }
+
+            /* 词间距 */
+            p.wsp1{
+                word-spacing: 5px;
+            }
+            p.wsp2{
+                word-spacing: 10px;
+            }
+            p.wsp3{
+                word-spacing: 15px;
+            }
+
+            p span{
+                text-decoration: underline;
+                font-weight: bolder;
+            }
+            p.study{
+                text-transform: uppercase;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <table id="demo">
+            <caption>常见的文本样式属性：</caption>
+            <thead>
+                <tr>
+                    <th>属性</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>text-indent</td>
+                    <td>首行缩进</td>
+                </tr>
+                <tr>
+                    <td>text-align</td>
+                    <td>水平对齐</td>
+                </tr>
+                <tr>
+                    <td>text-decoration</td>
+                    <td>文本修饰</td>
+                </tr>
+                <tr>
+                    <td>text-transform</td>
+                    <td>大小写转换</td>
+                </tr>
+                <tr>
+                    <td>line-height</td>
+                    <td>行高</td>
+                </tr>
+                <tr>
+                    <td>leteer-spacing</td>
+                    <td>字母行距</td>
+                </tr>
+                <tr>
+                    <td>word-spacing</td>
+                    <td>词间距</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr/>
+        <h3>首行缩进：text-indent</h3>
+        <p class="first">水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。</p>
+        <p class="first">予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人? 牡丹之爱，宜乎众矣。</p>
+
+        <hr/>
+        <h3>水平对齐：text-align</h3>
+        <div class="secend">
+            <p id="tital">悯农</p>
+            <p class="body">
+                锄禾日当午<br/>
+                汗滴禾下土<br/>
+                谁知盘中餐<br/>
+                粒粒皆辛苦
+            </p>
+        </div>
+
+        <hr/>
+        <h3>文本修饰：text-decoration</h3>
+        <p class="underline">属性值：underline，实现下换线</p>
+        <p class="delete">属性值：line-through，实现中划线（删除线）</p>
+        <p class="top">属性值：overline，实现顶划线</p>
+
+        <hr/>
+        <h3>大小写转换：text-transform</h3>
+        <p>属性值：uppercase，将小写转换成大写</p>
+        <p class="uppercase">this is my demo</p>
+        <p>属性值：lowercase，将大写转换成小写</p>
+        <p class="lowercase">HOW ARE YOU?</p>
+        <p>属性值：capitalize，将单词的首字母大写</p>
+        <P class="capitalize">welcome to china</P>
+
+        <hr/>
+        <h3>行高：line-height</h3>
+        <hr/><p class="p1">水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。</p><hr/>
+        <p class="p2">水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。</p><hr/>
+        <p class="p3">水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。</p><hr/>
+
+        <hr/>
+        <h3>间距</h3>
+        <h4>字间距：letter-spacing，两个字之间的距离</h4>
+        <p class="lsp1">蒹葭苍苍，白露为霜。所谓伊人，在水一方。this is me</p>
+        <p class="lsp2">蒹葭苍苍，白露为霜。所谓伊人，在水一方。this is me</p>
+        <p class="lsp3">蒹葭苍苍，白露为霜。所谓伊人，在水一方。this is me</p>
+
+        <h4>词间距：word-spacing，两个单词之间的距离，只针对于英文单词而言</h4>
+        <p class="wsp1">蒹葭苍苍，白露为霜。所谓伊人，在水一方。this is me</p>
+        <p class="wsp2">蒹葭苍苍，白露为霜。所谓伊人，在水一方。this is me</p>
+        <p class="wsp3">蒹葭苍苍，白露为霜。所谓伊人，在水一方。this is me</p>
+
+        <hr/>
+        <h3>练习</h3>
+        <p>很多人都喜欢用战术上的勤奋来掩盖战略上的懒惰，事实上这种“<span>低水平的勤奋</span>”远远比懒惰可怕。</p>
+        <p class="study">Remember: no pain, no gain！</p>
+    </body>
+</html>
+    
+

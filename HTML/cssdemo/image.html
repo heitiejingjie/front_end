@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>图片大小</title>
+        <style>
+            div{
+                width: 500px;
+                height: 150px;
+                border: 1px solid red;
+            }
+
+           img{
+               width: 70px;
+               border: chartreuse solid 1px;
+           }
+
+            .div1{
+                 text-align: left;
+            }
+            .div2{
+                text-align: center;
+            }
+            .div3{
+                text-align: right;
+            }
+
+           #vertical1{
+               vertical-align: top;
+           }
+           #vertical2{
+               vertical-align: middle;
+           }
+           #vertical1{
+               vertical-align: bottom;
+           }
+           #vertical1{
+               vertical-align: baseline;
+           }
+
+           #fl{
+            float: left;
+           }
+
+        </style>
+    </head>
+    <body>
+        <h3>水平对齐：使用text-align样式，对齐是后代元素相对于祖先元素之间的关系</h3>
+        <div class="div1">
+           <img src="../../image/xuezhixaixuenai.png" alt="雪之下雪乃" title="雪之下雪乃"> 
+        </div>
+        <div class="div2">
+           <img src="../../image/xuezhixaixuenai.png" alt="雪之下雪乃" title="雪之下雪乃"> 
+        </div>
+        <div class="div3">
+           <img src="../../image/xuezhixaixuenai.png" alt="雪之下雪乃" title="雪之下雪乃"> 
+        </div>
+
+        <hr/>
+        <h3>垂直对齐：使用vertical-align样式</h3>
+        <div>
+            由比滨<img id="vertical1" src="../../image/youbibinjieyi.jpg" alt="由比滨结衣">结衣
+        </div>
+        <div>
+            由比滨<img id="vertical2" src="../../image/youbibinjieyi.jpg" alt="由比滨结衣">结衣
+        </div>
+        <div>
+            由比滨<img id="vertical3" src="../../image/youbibinjieyi.jpg" alt="由比滨结衣">结衣
+        </div>
+        <div>
+            由比滨<img id="vertical4" src="../../image/youbibinjieyi.jpg" alt="由比滨结衣">结衣
+        </div>
+
+        <hr/>
+        <h3>文字环绕：使用float样式</h3>
+        <div>
+            <img id="fl" src="../../image/biqigubafan.jpg" alt="比企谷八幡">
+            <p>水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人? 牡丹之爱，宜乎众矣。</p>
+        </div>
+    </body>
+</html>

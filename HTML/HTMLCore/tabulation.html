@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>表格</title>
+    </head>
+    <body>
+        <h3>表格：</h3>
+        <p>组成：</p>
+        <p>表格：table标签</p>
+        <p>标题：caption标签</p>
+        <p>表头：th（table header cell）标签</p>
+        <p>表格行：tr（table row）标签</p>
+        <p>表格单元格：td（table data cell）标签</p>
+        <!-- 表格基本结构 -->
+        <table>
+            <caption>表格标题</caption>     <!-- 表格标题-->
+            <tr>                            <!-- 表格行：表示整个表格有多少行-->
+                <td>HTML</td>               <!--表格单元格：表示一行中有多少个单元格-->
+                <td>CSS</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>C#</td>
+            </tr>
+        </table>
+
+        <table>
+            <caption>测试成绩</caption>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>语文</th>
+                    <th>数学</th>
+                    <th>英语</th>
+                    <th>综合</th>
+                </tr>
+            </thead>
+           <!-- 表体 -->
+           <tbody>
+            <tr>
+                <td>小明</td>
+                <td>120</td>
+                <td>110</td>
+                <td>136</td>
+                <td>256</td>
+            </tr>
+            <tr>
+                <td>小红</td>
+                <td>130</td>
+                <td>110</td>
+                <td>123</td>
+                <td>269</td>
+            </tr>
+            <tr>
+                <td>小华</td>
+                <td>120</td>
+                <td>130</td>
+                <td>140</td>
+                <td>280</td>
+            </tr>
+           </tbody>
+           <!-- 表脚 -->
+            <tfoot>
+                <tr>
+                    <td>平均成绩</td>
+                    <td>123</td>
+                    <td>117</td>
+                    <td>133</td>
+                    <td>268</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <hr/>
+        <h3>表格语义化：</h3>
+        <p>使用thead、tbody和tboot标签可以更好的将表格划分区域</p>
+
+        <hr/>
+        <h3>合并行：使用rowspan（跨越的行）属性</h3>
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td>小明</td>
+            </tr>
+            <tr>
+                <td rowspan="2">喜欢的水果：</td>
+                <td>番茄</td>
+            </tr>
+            <tr>
+                <td>西瓜</td>
+            </tr>
+        </table>
+
+        <hr/>
+        <h3>合并列：colspan（跨越的列）属性</h3>
+        <table>
+            <tr>
+                <td colspan="2">编程语言</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>CSS</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>C#</td>
+            </tr>
+        </table>
+
+        <hr/>
+        <h3>练习：</h3>
+        <table>
+            <caption>学生成绩</caption>
+            <thead>
+                <tr>
+                    <td><strong>姓名</strong></td>
+                    <td><strong>性别</strong></td>
+                    <td><strong>成绩</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>520</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>平均分</td>
+                    <td colspan="2">385</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

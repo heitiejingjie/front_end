@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="content-type" content="text/html;charset=utf-8">
+    <title>数学对象</title>
+    <script>
+        // 取最大值
+        var max = Math.max(1, 4, 67, 8, 82, 342, 424, 2, 42, 4, 2, 4, 2, 42);
+        document.write(max + "<br/>");
+        // 取最小值
+        var min = Math.min(1, 4, 67, 8, 82, 342, 424, 2, 42, 4, 2, 4, 2, 42);
+        document.write(min + "<br/>");
+
+        // 向下取整
+        document.write("Math.floor(3)等于" + Math.floor(3) + "<br/>");
+        document.write("Math.floor(0.4)等于" + Math.floor(0.4) + "<br/>");
+        document.write("Math.floor(0.6)等于" + Math.floor(0.6) + "<br/>");
+        document.write("Math.floor(-1.1)等于" + Math.floor(-1.1) + "<br/>");
+        document.write("Math.floor(-1.9)等于" + Math.floor(-1.9) + "<br/>");
+        // 向上取整
+        document.write("Math.ceil(3)等于" + Math.ceil(3) + "<br/>");
+        document.write("Math.ceil(0.4)等于" + Math.ceil(0.4) + "<br/>");
+        document.write("Math.ceil(0.6)等于" + Math.ceil(0.6) + "<br/>");
+        document.write("Math.ceil(-1.1)等于" + Math.ceil(-1.1) + "<br/>");
+        document.write("Math.ceil(-1.9)等于" + Math.ceil(-1.9) + "<br/>");
+
+        // 三角函数
+        document.write("sin30°：" + Math.sin(30 * Math.PI / 180) + "<br/>");
+        document.write("cos60°：" + Math.cos(60 * Math.PI / 180) + "<br/>");
+        document.write("tan45°：" + Math.tan(45 * Math.PI / 180) + "<br/>");
+
+        // 练习
+        var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        var arr = str.split("");
+        var result = "";
+        for(var i = 0; i < 4; i++)
+        {
+            var n = Math.floor(Math.random()*(arr.length));
+            result += arr[n];
+        }
+        document.write(result + "<br/>");
+
+        // 练习二
+        // 生成0-100的随机数
+        var m = Math.floor(Math.random()*(100+1));
+        // 生成1-100的随机数
+        var m2 = Math.floor(Math.random()*(100+1)+1);
+        // 生成n-m的随机数
+        var mn = Math.floor(Math.random()*(m-n+1)+n);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

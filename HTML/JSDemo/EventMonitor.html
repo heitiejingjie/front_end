@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>事件监听器</title>
+        <script>
+            /*
+                一、事件处理器：即一个元素添加一个相同的事件，但可以添加多个不同的事件
+
+                二、事件监听器：
+                    1、绑定事件：即使用addEventListener（）方法来为一个元素添加事件
+                        obj.addEventListener(type , fn , false)
+                        obj：DOM对象，获取的元素节点
+                        type：字符串，事件类型，不需要加上“on”前缀
+                        fn：函数名或匿名函数
+                        false：表示事件冒泡阶段调用
+                    2、解绑事件：即使用removeEventListener（）方法来为一个元素移除事件
+                        obj.removeEventListener(type, fn, false)
+                        obj：DOM对象，获取的元素节点
+                        type：字符串，事件类型，不需要加上“on”前缀
+                        fn：只能是函数名
+                        false：表示事件冒泡阶段调用
+                    3、注：
+                        1、removeEventListener（）只能移除使用定义函数添加的事件，不能移除使用匿名函数添加的时间
+                        2、removeEventListener（）只能移除事件监听器添加的事件
+                        3、要移除事件处理器添加的事件，使用obj.事件名 = null 形式的语句来移除事件
+                
+                三、Event对象：当一个事件发生时，与这个事件相关的详细信息会保存到一个地方，这个地方的就是event对象
+                    常用属性：
+                        1、type：事件的类型
+                        2、keycode：键码值
+                        3、shiftkey：是否按下shift键
+                        4、ctrlkey：是否按下ctrl键
+                        5、altkey：是否按下alt键
+                    
+                四、this：
+                    在事件操作中，可以这样理解，哪个DOM对象（元素节点）调用了this所在的函数，this就指向哪个DOM对象
+                
+
+            */
+           
+            window.onload = function()
+            {
+                var oBtn = document.getElementById("btn");
+                // 使用普通方法的调用
+                // oBtn.addEventListener("click", aMes, false);
+                function aMes()
+                {
+                    alert("你真的点击了我");
+                }
+                // 使用匿名方法的调用
+                oBtn.addEventListener("click", aMes, false);
+                // oBtn.removeEventListener("click", aMes, false);
+
+                // evnet对象属性：
+                var oBtn = document.getElementById("btn2");
+                oBtn.onclick = function(e)
+                {
+                    alert(e.type);
+                }
+
+                /* var oP = document.getElementsByClassName("ps");
+                document.onkeydown = function(e)
+                {
+                    if(e.shiftkey || e.ctrlkey || e.altkey)
+                    {
+                        alert("禁止按下shift、ctrl、alt键");
+                    }
+                }
+
+                document.onkeydown = function (e) {
+                if (e.shiftKey || e.altKey || e.ctrlKey) {
+                    alert("禁止使用shift、alt、ctrl键！");
+                }
+                } */
+
+                // this
+                var oDiv = document.getElementsByClassName("d1");
+                oDiv[0].onclick = function()
+                {
+                    this.style.color = "deepskyblue";
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="button" value="点击" id="btn">
+        <input type="button" value="按下" id="btn2">
+        <p class="ps">鱼真的只有七秒钟的记忆吗？</p>
+        <div class="d1">没有什么能够阻挡</div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>时间对象简介</title>
+        <script>
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var day = d.getDate();
+            document.write("今天是" + year + "年" + month + "月" + day + "日" + "<br/>");
+
+            var years = d.setFullYear(2008, 08, 08);
+            document.write("我现在设置的时间是：" + years + "<br/>");
+
+            // 练习
+            var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            var myDay = new Date();
+            var year1 = myDay.getFullYear();
+            var month1 = myDay.getMonth() + 1;
+            var day1 = myDay.getDate();
+            var week1 = weeks[myDay.getDay()];
+            document.write("今天是：" + year1 + "年" + month1 + "月" + day1 + "日" + " " + week1 + "<br/>");
+
+            // document.write("今天是：" + myDay.getFullYear() + "年" + myDay.getMonth() + "月" + myday.getDate() + "日" + " " + weeks[myday.getDay()] + "<br/>");
+
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

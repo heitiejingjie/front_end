@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>定位布局简介</title>
+        <style type="text/css">
+            table,tr,th,td{
+                border: black solid 1px;
+                border-collapse: collapse;
+            }
+
+            .fixed1{
+                width: 100px;
+                height: 2000px;
+                border:blue solid 1px;
+                background-color: blue;
+                text-align: center;
+                line-height: 900px;
+            }
+            /* .fixed2{
+                width: 200px;
+                height: 20px;
+                top: 300px;
+                left: 200px;
+                position: fixed;
+                background-color: brown;
+            } */
+
+            .father1{
+                width: 500px;
+                height: 500px;
+                background-color: coral;
+
+            }
+            .father1 div{
+                width: 125px;
+                height: 125px;
+                background-color: cornflowerblue;
+                margin-bottom: 10px;
+            }
+            .son2{
+                position: relative;
+                top: 10px;
+                left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+       <table>
+           <caption>position属性简介</caption>
+           <thead>
+               <tr>
+                   <th>属性</th>
+                   <th>简介</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>fixed</td>
+                   <td>固定定位</td>
+               </tr>
+               <tr>
+                   <td>relative</td>
+                   <td>相对定位</td>
+               </tr>
+               <tr>
+                   <td>absolute</td>
+                   <td>绝对定位</td>
+               </tr>
+               <tr>
+                   <td>static</td>
+                   <td>静态定位</td>
+               </tr>
+           </tbody>
+       </table> 
+
+       <hr/>
+       <h3>固定定位：fixed，位置是针对浏览器而言</h3>
+       <div class="fixed1">无定位元素</div>
+       <div class="fixed2">固定定位元素</div>
+
+       <hr/>
+       <h3>相对定位：relative，位置是针对于原始位置而言</h3>
+       <div class="father1">
+           <div class="son1"></div>
+           <div class="son2"></div>
+           <div class="son3"></div>
+       </div>
+
+       <hr/>
+       <h3>绝对定位：absolute，位置是针对于浏览器而言，完全脱离正常流，其他的元素会无视设置绝对定位的元素</h3>
+       <div class="absolute1"></div>
+       <div class="absolute2"></div>
+       <div class="absolute3"></div>
+    </body>
+</html>

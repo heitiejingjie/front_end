@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="content-type" content="text/html;charset=utf-8">
+    <title>核心技术</title>
+    <script>
+        // DOM技术：把页面中看成一个树形结构，页面的每一个元素就是树形结构的一个节点，
+        // 而将每一个节点看成一个对象，对元素的操作就是对对象的属性和方法的操作
+
+        // DOM节点共有12种类型，而常用的有3种
+        // 1、元素节点
+        // 2、属性节点
+        // 3、文本节点
+        // 节点和元素时不同的概念，节点是包含元素的
+        // 注意：
+        // 1、一个元素就是一个节点，这个节点称之为“元素节点”
+        // 2、属性节点和文本节点看起来是元素的一部分，但实际上，它们是独立的节点
+        // 3、只有元素节点才拥有子节点，属性节点和文本节点没有子节点
+        window.onload = function () {
+            // 通过元素id来获取元素
+            var oDiv = document.getElementById("first_div");
+            oDiv.style.color = "green";
+
+            var oUl = document.getElementById("unorderlist");
+            var oli = oUl.getElementsByTagName("li");
+            oli[2].style.color = "skyblue";
+
+            var oOl = document.getElementsByClassName("furntrue");
+            oOl[1].style.color = "red";
+
+
+            // 创建元素
+            var op = document.createElement("p"); // 创建元素节点
+            var text = document.createTextNode("jiushiwo"); // 创建文本节点
+
+            var obody = document.getElementsByTagName("body"); // 获取需要将元素插入的元素节点
+
+            op.appendChild(text); // 将文本节点插入元素节点
+            obody[0].appendChild(op); // 将要创建的元素节点插入存在的元素节点
+
+
+            var oinput = document.createElement("input");
+            oinput.id = "submit";
+            oinput.type = "button";
+            oinput.value = "提交";
+            obody[0].appendChild(oinput);
+
+            var oimg = document.createElement("img");
+            oimg.className = "picture";
+            oimg.src = "../../image/biqigubafan.jpg";
+            oimg.style.border = "solid green 1px";
+            obody[0].appendChild(oimg);
+
+            // 创建元素总结：
+            // 1、创建元素节点： createElement()
+
+            // 2、 创建文本节点： createTextNode()
+
+            // 3、把文本节点插入元素节点： appendChild()
+
+            // 4、把组装好的元素插入到已有元素中： appendChild()
+
+            // appendChild()把一个新元素插入到父元素的内部子元素的 末尾
+            // A.appendChild(B)，A表示父元素，B表示子元素
+
+            // 插入元素示例
+            var obtn = document.getElementById("button");
+            // 为按钮添加事件
+            obtn.onclick = function()
+            {
+                // 获取列表元素
+                var oUl = document.getElementById("list");
+                // 获取文本框元素
+                var otext = document.getElementById("txt");
+                // 将文本框的内容转换为文本节点
+                var textNode = document.createTextNode(otext.value);
+                // 创建列表行元素
+                var oli = document.createElement("li");
+                // 将文本节点插入li元素
+                oli.appendChild(textNode);
+                // 将列表项元素插入列表
+                // oUl.appendChild(oli);
+                oUl.insertBefore(oli, oUl.firstElementChild);
+            };
+
+            // insertBefore()方法将一个新元素插入到父元素中的某一个子元素“之前”
+            // A.insertBefore(B, ref)  ref表示父元素的一个子元素
+
+            // 删除元素
+            // removeChild()表示删除父元素下的某一个子元素
+
+            var deButton = document.getElementById("debutton");
+
+            deButton.onclick = function()
+            {
+                var olist = document.getElementById("list");
+                olist.removeChild(olist.lastChild);
+            }
+
+            // 复制元素
+            var clonelist = document.getElementById("clonelist");
+
+            clonelist.onclick = function()
+            {
+                var olist = document.getElementById("list");
+                document.body.appendChild(olist.cloneNode(1));
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="first_div">哈哈哈，我来了！！</div>
+    <ul id="unorderlist">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Vue.js</li>
+    </ul>
+
+    <ol id="orderlist">
+        <li class="home_appliances">电视机</li>
+        <li class="home_appliances">电冰箱</li>
+        <li class="furntrue">桌子</li>
+        <li class="furntrue">椅子</li>
+        <li class="furntrue">沙发</li>
+    </ol>
+    你的最高学历：
+    <input type="radio" name="status" value="本科">本科
+    <input type="radio" name="status" value="硕士">硕士
+    <input type="radio" name="status" value="博士">博士
+
+    <ul id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <input type="text" id="txt" /><input id="button" type="button" value="插入"/><br/>
+    <input type="button" value="删除" id="debutton"><br/>
+    <input type="button" value="复制" id="clonelist">
+
+</body>
+
+</html>

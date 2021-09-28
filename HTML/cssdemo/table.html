@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>表格</title>
+        <style>
+
+            table,tr,th,td{
+                border:2px solid red;
+            }
+            /* 表格标题的位置 */
+            table{
+                font-weight: bold;
+                /*  caption-side: bottom; */
+                caption-side: top;
+            }
+
+            /* 表格边框合并 */
+            table{
+                /* border-collapse: collapse; */
+            }
+
+            /* 使得表格边框之间有间隙 */
+            table{
+                border-spacing: 3px;
+            }
+
+        </style>
+    </head>
+    <body>
+         <h3>表格标题位置：使用caption-side样式</h3>
+         <h3>表格边框合并：使用border-collapse样式</h3>    
+         <h3>表格边框间隙：使用border-spacing样式</h3>
+         <table>
+             <caption>caption-side属性值</caption>
+             <thead>
+                <tr>
+                    <th>属性值</th>
+                    <th>描述</th>
+                </tr>
+             </thead>
+             
+             <tbody>
+                 <tr>
+                     <td>top</td>
+                     <td>标题位置放在表顶</td>
+                 </tr>
+                 <tr>
+                     <td>bottom</td>
+                     <td>标题位置放在表底</td>
+                 </tr>
+             </tbody>
+         </table>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>css属性演示</title>
+        <style>
+            #box{
+                width: 200px;
+                height: 100px;
+                background-color: brown;
+            }
+        </style>
+        <script>
+            /*
+                获取css属性：
+                    使用getcomputedstyle（obj）.attr
+                        obj：表示dom节点
+                        attr：表示css属性名，css属性名需要采取驼峰型写法
+                设置css属性（两种方式）：
+                    1、style对象方式（行内样式）
+                        obj.style.attr = "值" 等价于 obj.style["attr"]
+                        obj：dom节点
+                        attr：表示属性名，采用驼峰型
+                    2、csstext设置属性
+
+
+            */
+            window.onload = function ()
+            {
+                // 获取css属性值
+                var oButton = document.getElementById("btn");
+                var oDiv = document.getElementById("box");
+                oButton.onclick = function ()
+                {
+                    // 这两种写法等效，凡是对象的属性都有这两种写法
+                    // alert(getComputedStyle(oDiv).backgroundColor);
+                    alert(getComputedStyle(oDiv)["backgroundColor"]);
+                }
+
+                // 设置css属性值
+                var oButton2 = document.getElementById("btn2");
+                oButton2.onclick = function ()
+                {
+                    oDiv.style.backgroundColor = "lightskyblue";
+                }
+
+                // 动态设置属性
+                var oButton3 = document.getElementById("btn3");
+                oButton3.onclick = function ()
+                {
+                    // var attr = document.getElementsByClassName("text1")[0].value;
+                    // var val = document.getElementsByClassName("text2")[0].value;
+                    // oDiv.style[attr] = val;
+
+                    var cssText = document.getElementsByClassName("text3")[0].value;
+                    oDiv.style.cssText = cssText;
+                }
+                    
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" id="btn" value="获取颜色">
+        <input type="button" id="btn2" value="设置颜色"><br/>
+        <input type="button" id="btn3" value="演示"><br/>
+        属性：<input type="text" class="text1"><br/>
+        颜色：<input type="text" class="text2"><br/>
+        cssText: <input type="text" class="text3"><br/>
+        <div id="box"></div>
+
+    </body>
+</html>

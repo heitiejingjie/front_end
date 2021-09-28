@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>伪类选择器</title>
+        <style type="text/css">
+            .visibility .select{
+                display: none;
+            }
+
+            table,tr,td{
+                border: solid silver 1px;
+            }
+            td{
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+            }
+        </style>
+        <script src="../../../jquery/jquery-1.12.4.min.js"></script>
+        <script>
+            /*
+                （一）、“位置”伪类选择器
+                （二）、“子元素”伪类选择器
+                （三）、“可见性”伪类选择器
+                （四）、“内容”伪类选择器
+                （五）、“表单”伪类选择器
+                （六）、“表单属性”伪类选择器
+            */
+            
+            // （一）“位置”伪类选择器
+            $(function () {
+                $(".place li:first").css("background","red");
+                $(".place li:last").css("background","green");
+                $(".place li:nth(2)").css("background","orange");
+                $(".place li:eq(1)").css("background","yellow");
+                $(".place li:lt(2)").css("background","blue");
+                $(".place li:gt(2)").css("background","skyblue");
+              })
+            
+                
+            // （二）：“子元素”伪类选择器
+            // 一共有两类：
+            // （1）：first-child、：last-child、：nth-child（n）、：only-child
+            // （2）：first-of-type、：last-of-type、：nth-of-type（n）、：only-of-type
+            $(function () {
+                // （1）第一类
+                $(".child_element li:first-child").css("background","red");
+                $(".child_element li:last-child").css("background","green");
+                $(".child_element li:nth-child(2)").css("background","orange");
+                $(".child_element li:nth-child(3)").css("background","green");
+                $(".child_element li:nth-child(4)").css("background","skyblue");
+                // 隔行换色
+                $(".child_element li:nth-child(2n)").css("background","lightblue");
+                $(".child_element li:nth-child(2n+1)").css("background","red");
+
+                // （2）第二类
+                // 表示选择父元素下第几个类型的子元素
+              })
+
+            
+            // （三）“可见性”伪类选择器
+            // 元素的共有两种状态：visible（可见的）和hidden（不可见的、隐藏的）
+            $(function () {
+                $("#btn").click(function () {
+                $(".visibility li:hidden").css("display","block");
+                  }) 
+              })
+            
+            
+            // （四）“内容”伪类选择器
+            // （1）：contains（text）        选取包含指定文本的元素
+            // （2）：has（selector）         选取包含指定选择器的元素
+            // （3）：parent                 选取含有文本或子元素的元素
+            // （4）：empty                  选取不含有文本或子元素的元素，即空元素
+            $(function () {
+                // （1）：contains（text）
+                $(".content div:contains(态度)").css("color","green");
+                $(".content p:contains(态度)").css("color","orange");
+
+                // （2）：has（selector）
+                $(".content div:has(#grandson)").css("background","lightblue");
+
+                // （4）：empty
+                // $("table td:empty").css("background","red");
+
+                // （3）：parent
+                $("table td:parent").css("background","red");
+              })
+
+            
+            // （五）”表单“伪类选择器
+            // （1）：input                 选取所有input元素
+            // （2）：button                选取所有含有button属性（按钮）的元素
+            // （3）：submit                选取所有含有submit属性（提交）的元素
+            // （4）：reset                 选取所有含有reset属性（重置）的元素
+            // （5）：text                  选取所有单行文本框
+            // （6）：textarea              选取所有多行文本框
+            // （7）：password              选取所有密码文本框
+            // （8）：radio                 选取所有单选框
+            // （9）：checkbox              选取所有复选框
+            // （10）：image                选取所有图片域
+            // （11）：file                 选取所有文件域
+            $(function () {
+                $(".form input:checkbox").attr("checked","checked");
+              })
+            
+            
+            // （六）“表单属性”伪类选择器
+            // （1）：checked               选取所有被选中的表单元素，一般是单选框或复选框
+            // （2）：selected              选取所有被选中的表单元素的选项，一般是下拉列表
+            // （3）：enable                选取所有可用的、被激活的表单元素
+            // （4）：disable               选取所有不可用的、丧失功能的表单元素
+            // （5）：read-only             选取所有只读的表单元素
+            // （6）：focus                 选取所有获得焦点的表单元素
+            $(function () {
+                var result = $(".form_attr input:checked").val();
+                alert(result);
+              })
+            
+
+            // （七）“其他的”伪类选择器
+            // （1）：not（selector）        选取除了某个选择器以外的所有元素
+            // （2）：animated               选取所有正在执行动画的元素
+            // （3）：root                   选取页面根元素，即html元素
+            // （4）：header                选取h1~h6的标题元素
+            // （5）：target                选取锚点元素
+            // （6）：lang（language）      选取某种特定语言的元素
+            $(function () {
+                $(".others li:not(.child)").css("color","blue");
+              })
+
+        </script>
+    </head>
+    <body> 
+        <ul class="place">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Vue.js</li>
+            <li>JQuery.js</li>
+        </ul>
+        <hr/>
+        <ul class="child_element">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <hr/>
+        <ul class="visibility">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li class="select">Vue.js</li>
+            <li>JQuery</li>
+            <li>Node.js</li>
+        </ul>
+        <input id="btn" type="button" value="显示">
+        <hr/>
+        <div class="content">
+            <div>这就是我的态度</div>
+            <p>没什么的</p>
+            <p>我的态度由我做主</p>
+            <div>动感地带</div>
+
+            <div class="child1">
+                <p>哈哈哈</p>
+                <p id="grandson">杯子</p>
+            </div>
+            <div class="child2">
+                <div>呵呵呵</div>
+            </div>
+        </div>
+        <hr/>
+        <table>
+            <tr>
+                <td>2</td>
+                <td>4</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>32</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td>256</td>
+                <td></td>
+            </tr>
+        </table>
+        <hr/>
+        <div class="form">
+            <p>性别：</p>
+            <label><input type="radio" name="gender" id="">男</label>
+            <label><input type="radio" name="gender" id="">女</label>
+            <p>喜欢的水果是：</p>
+            <label"><input type="checkbox" name="fruits" id="">柑橘</label>
+            <label"><input type="checkbox" name="fruits" id="">苹果</label>
+            <label"><input type="checkbox" name="fruits" id="">香蕉</label>
+        </div>
+        <hr/>
+        <div class="form_attr">
+            <p>喜欢的水果是：</p>
+            <label><input type="checkbox" name="fruits">柑橘</label>
+            <label><input type="checkbox" name="fruits">苹果</label>
+            <label><input type="checkbox" name="fruits" checked>香蕉</label>
+        </div>
+        <hr/>
+        <ul class="others">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li class="child">JQuery</li>
+            <li>Node.js</li>
+        </ul>
+    </body>
+</html>

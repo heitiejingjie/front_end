@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>背景样式</title>
+        <style>
+            table,tr,th,td{
+                border: 1px solid;
+            }
+            table{
+                caption-side: top;
+                border-collapse: collapse;
+            }
+
+            div{
+                width:1000px;
+                height: 300px;
+                background-image: url(../../image/线性喜欢爱心.png);
+            }
+            #background-image1{
+                background-repeat: repeat;
+            }
+            #background-image2{
+                background-repeat: repeat-x;
+            }
+             #background-image3{
+                background-repeat: repeat-y;
+            }
+             #background-image4{
+                background-repeat: no-repeat;
+            }
+
+            .background-position-px{
+                width: 500px;
+                height: 500px;
+                border: brown solid 1px;
+                background-image: url(../../image/线性喜欢爱心.png);
+                background-repeat: no-repeat;
+                background-position: 20px 30px;
+            }
+            .background-position-word{
+                width: 500px;
+                height: 500px;
+                border: green solid 1px;
+                background-image: url(../../image/线性喜欢爱心.png);
+                background-repeat: no-repeat;
+                background-position: center bottom;
+            }
+
+            .attachment{
+                width: 100px;
+                height: 100px;
+                background-image: url(../../image/xuezhixaixuenai.png);
+                background-attachment: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <hr/>
+        <h3>定义图片是否固定：background-attachment</h3>
+        <div class="attachment"></div>
+
+        <hr/>
+        <h3>背景设置：背景颜色和背景图片</h3>
+        <p>背景颜色属性：background-clor</p>
+        <p>背景图片较复杂：</p>
+        <table>
+            <caption>背景图片属性</caption>
+            <thead>
+                <tr>
+                    <th>属性</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>background-image</td>
+                    <td>定义背景图片地址</td>
+                </tr>
+                <tr>
+                    <td>background-repeat</td>
+                    <td>定义背景图片重复</td>
+                </tr>
+                <tr>
+                    <td>background-position</td>
+                    <td>定义背景图片位置</td>
+                </tr>
+                <tr>
+                    <td>background-attachment</td>
+                    <td>定义背景图片固定</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr/>
+        <h3>图片重复：使用background-repeat属性</h3>
+        <p>1、repeat：图片重复默认设置</p>
+        <div id="background-image1"></div>
+        <p>2、repeat-x：只在x轴重复图片</p>
+        <div id="background-image2"></div>
+        <p>3、repeat-y：只在y轴重复图片</p>
+        <div id="background-image3"></div>
+        <p>4、no-repeat：不重复图片</p>
+        <div id="background-image4"></div>
+
+        <hr/>
+        <h3>定义图片位置：使用background-position</h3>
+        <p>一般有两种方式：像素值和关键字</p>
+        <p>1、像素值：以屏幕左上角为基点</p>
+        <div class="background-position-px"></div>
+        <p>2、关键字：</p>
+        <div class="background-position-word"></div>
+
+      
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JQuery基础</title>
+        <script src="../../jquery/jquery-1.12.4.min.js"></script>
+        <script>
+            /*
+                (一)基础选择器
+                (二)层次选择器
+                (三)属性选择器
+            */
+            
+            //  (一)元素选择器
+            // $(function () {
+            //     // 元素选择器
+            //     $("div").css("color","red");
+            //     // id选择器
+            //     $("#lvye").css("color","green");
+            //     // class（类）选择器
+            //     $(".lv").css("color","yellow");
+            //     // 群组选择器
+            //     $("h3,span,p").css("background","skyblue");
+            //   })
+
+            // （二）层次选择器
+            $(function () {
+                // 后代选择器
+                $(".first p").css("color","red");
+                // 子代选择器
+                $(".first>p").css("color","green");
+                // 兄弟选择器
+                $(".second~p").css("background","yellow");
+                // 相邻选择器
+                $(".second+p").css("color","skyblue");
+                
+                // 示例
+                $(".demo>span+span").css("border-left","2px solid yellow");
+            })
+            // (三)属性选择器           “E”代表元素
+            // (1)、E[attr]                  选择带有attr属性的元素
+            // (2)、E[attr= "value"]         选择带有attr属性且属性值为“value”的元素
+            // (3)、E[attr!= "value"]        选择带有attr属性且属性值不为“value”的元素
+            // (4)、E[attr^= "value"]        选择带有attr属性且属性值以“value”开头的元素
+            // (5)、E[attr$= "value"]        选择带有attr属性且属性值以”value“结尾的元素
+            // (6)、E[attr*= "value"]        选择带有attr属性且属性值包含“value”的元素
+            // (7)、E[attr|= "value"]        选择带有attr属性且属性值等于“value”或属性值以“value”开头的元素
+            // (8)、E[attr~= "value"]        选择带有attr属性且属性值等于“value”或属性值包含“value”的元素
+            $(function () {
+                // （1）
+                $(".attr li[class]").css("color","red");
+                // （2）
+                $(".attr li[class='jiushiwo']").css("color","green");
+                // (3)
+                $(".attr li[class!='jiushiwo']").css("color","skyblue");
+                // (4)
+                $(".attr li[class^='jiushiwo']").css("color","yellow");
+            })
+        </script>
+    </head>
+    <body>
+        <!--    
+        <div>绿叶学习网</div>
+        <span>绿叶学习网</span>
+        <h3>绿叶学习网</h3>
+        <p>绿叶学习网</p>
+        <div class="lv">绿叶学习网</div>
+        <div class="lv">绿叶学习网</div>
+        <div>绿叶学习网</div>
+        <div id="lvye">绿叶学习网</div> -->
+
+        <div class="first">
+            <p>这是first的子元素</p>
+            <p>这是first的子元素</p>
+            <div class="second">
+                <p>这是second的子元素</p>
+                <p>这是second的子元素</p>
+            </div>
+            <p>这是first的子元素</p>
+            <p>这是first的子元素</p>
+        </div>
+
+        <div class="demo">
+            <span>关于我们</span>
+            <span>联系我们</span>
+            <span>版权声明</span>
+            <span>免责声明</span>
+            <span>广告服务</span>
+            <span>意见反馈</span>
+        </div>
+       
+        <ul class="attr">
+            <li class="jiushiwo">测试属性选择器</li>
+            <li class="hejiushiwo">测试属性选择器</li>
+            <li class="jiushiwoz">测试属性选择器</li>
+            <li>测试属性选择器</li>
+            <li class="heitiejingjie">测试属性选择器</li>
+        </ul>
+    </body>
+</html>

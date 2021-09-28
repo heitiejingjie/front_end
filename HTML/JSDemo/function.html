@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>函数</title>
+        <script>
+            function sum(n) {
+                var sum = 0;
+                for (var i = 1; i < n; i++) {
+                    sum += i;
+                }
+                document.write(n + "之内的整数和为：" + sum + "<br/>");
+            }
+
+            sum(50);
+            sum(100);
+            sum(150);
+            sum(200);
+            sum(250);
+
+            var a = "十里";
+
+            function getMes() {
+                var b = a + "桃花";
+                return b;
+            }
+            var str = "三生三世" + getMes();
+            document.write(str + "<br/>");
+
+            function love() {
+                alert("她：我爱jiushiwo。\n我：oh-my-god。 = =？！");
+            }
+
+
+            function func(a)
+            {
+                function multi(x)
+                {
+                    return x * x;                    
+                }
+                var m = 1;
+                for(var i = 1; i <= multi(a); i++)
+                {
+                    m = m * i;
+                }   
+                return m;
+            }
+
+            document.write(func(2) + func(2) + "<br/>");
+
+            // 获取字符串长度
+            var str = "jiushiwo zen mo yang!!";
+            document.write(str.length + "<br/>");
+
+            // 切换大小写
+            var str2 = "Hello World!!!";
+            document.write(str2.toLowerCase() + "<br/>");
+            document.write(str2.toUpperCase() + "<br/>");
+            document.write(str2 + "<br/>");
+
+            // 获取字符
+            document.write(str2 + "的第4个字符是：" + str2.charAt(3) + "<br/>");
+            document.write(str2 + "的第10个字符是：" + str2.charAt(9) + "<br/>");
+
+            // 截取字符串
+            var str3 = "";
+            str3 = str.substring(2, 10);
+            document.write(str3 + "<br/>")
+
+            // 替换字符串
+            var new_str = str.replace("jiushiwo", "heitiejingjie");
+            document.write(new_str + "<br/>");
+
+            // 分割字符串
+            var arr_str = str.split(" ");
+            document.write(arr_str[0] + "<br/>");
+            document.write(arr_str[1] + "<br/>");
+            document.write(arr_str[2] + "<br/>");
+            document.write(arr_str[3] + "<br/>");
+            
+            // 检索字符串
+            document.write(str.indexOf("jiushiwo") + "<br/>");
+            document.write(str.indexOf("Jiushiwo") + "<br/>");
+            document.write(str.indexOf("jiushiwohh") + "<br/>");
+
+            // 练习
+            var str4 = "Rome was not build in a day";
+            var sum = 0;
+            for(var i = 0; i <str4.length; i++)
+            {
+                var char = str4.charAt(i);
+                if (char != " ") {
+                    sum++;
+                }
+            }
+            document.write(sum + "<br/>");
+
+            var str5 = "Hello lvye";
+            for(var i = 0; i < str5.length; i++)
+            {
+                var char = str5.charAt(i);
+                if (char == "e") {
+                    str5 = str5.replace("e","");
+                }
+            }
+            document.write(str5 + "<br/>");
+
+        </script>
+    </head>
+    <body>
+        <a href="javascript:love()">表白对话</a>
+    </body>
+
+</html>

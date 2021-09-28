@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="content-type" content="text/html;charset=utf-8">
+    <title>流程控制</title>
+    <script>
+        // var score = 100;
+        // // if (score > 60) {
+        // //     alert("你通过了考试！！！")
+        // // }
+
+        // // if (score < 60) {
+        // //     alert("你通过了考试!!!")
+        // // } else 
+        // // {
+        // //     alert("你需要进行补考！！！")
+
+        // // }
+
+        // // var result = (score > 60) ? "你通过了考试！！！" : "你需要进行补考！！！";
+        // // alert(result);
+
+        // var day = 3;
+        // var week;
+        // switch (day) {
+        //     case 1:
+        //         week = "星期一";
+        //         break;
+        //     case 2:
+        //         week = "星期二";
+        //         break;
+        //     case 3:
+        //         week = "星期三";
+        //         break;
+        //     case 4:
+        //         week = "星期四";
+        //         break;
+        //     case 5:
+        //         week = "星期五";
+        //         break;
+        //     case 6:
+        //         week = "星期六";
+        //         break;
+        //     default:
+        //         week = "星期日";
+        //         break;
+        // }
+        // document.write("今天是：" + week);
+
+        // document.write("<br/>")
+        // var n = 1;
+        // var sum = 0;
+        // while (100 >= n) {
+        //     sum = sum + n;
+        //     n += 1;
+        // }
+        // document.write(sum);
+
+        // var str = "";
+        // for(var i = 100; i < 1000; ++i)
+        // {
+        //     var a = i % 10;    // 提取个位数
+        //     var b = (i / 10) % 10;
+        //     b = parseInt(b);
+        //     var c = i / 100;
+        //     c = parseInt(c);
+        //     if (i == ((a * a * a) + (b * b *b) + (c * c * c))) {
+        //         str = str + i + "、";
+        //     }
+        // }
+        // document.write("水仙花数有：" + str);
+
+        // 练习：
+        for(var i = 0; i < 4; i++)
+        {
+            for(var j = 3; j > i; j--)
+            {
+                document.write("-");
+            }
+
+            for(var n = 0; n < (i * 2) + 1; n++){
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+
+        for(var x = 0; x < 3; x++)
+        {
+            for(var y = 0; y <= x; y++)
+            {
+                document.write("-");
+            }
+
+            for(var z = 5; z >= (x * 2) + 1; z--)
+            {
+                document.write("*");
+            }
+
+            document.write("<br/>");
+        }
+
+
+        document.write("<br/>")
+
+        for(var i = 1; i <= 9; i++)
+        {
+            for(var j = 1; j <= i; j++)
+            {
+                document.write(j + " * " + i + " = "  + " " + j * i + "\t" + "\t");
+            }
+            document.write("<br/>")
+        }
+
+      
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

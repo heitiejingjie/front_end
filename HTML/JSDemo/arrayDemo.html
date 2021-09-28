@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <title>数组</title>
+        <script>
+            var arr1 = [1,2,3,4,5,6];
+
+            // 切片
+            var arr2 = ["HTML", "CSS", "JavaScript", "Node.js", "Vue.js"];
+            document.write(arr2 + "<br/>");
+            var slice_arr2 = arr2.slice(2,4);
+            document.write(slice_arr2 + "<br/>");
+
+            /*
+            添加元素
+            */
+            // 在数组头添加元素
+            arr2.unshift("C#", "Asp.net_core");
+            document.write(arr2 + "<br/>");
+            // 在数组尾部追加元素
+            arr2.push("Java", "Python");
+            document.write(arr2 + "<br/>");
+            
+            /*
+            删除元素
+            */
+            // 在数组头删除元素
+            var str = arr2.shift();
+            document.write(arr2 + "<br/>");
+            document.write(str + "<br/>");
+            // arr2.shift();
+            // document.write(arr2 + "<br/>");
+            // 删除数组尾的元素
+            var str2 = arr2.pop();
+            document.write(arr2 + "<br/>");
+            document.write(str2 + "<br/>");
+
+            // 数组排序
+            function up(a, b)
+             {
+                return a - b;
+            }
+            function down(a, b)
+             {
+                return b - a;
+            }
+            var arr3 = [5, 9, 1, 5, 10, 2389, 10, 2, 0, 101];
+            document.write("升序：" + arr3.sort(up) + "<br/>");
+            document.write("降序：" + arr3.sort(down) + "<br/>");
+
+            // 数组颠倒顺序
+            document.write(arr3.reverse() + "<br/>");
+
+            // 将数组连接成字符串
+            var str4 = arr2.join("--");
+            document.write(str4 + "<br/>");
+
+            // 练习
+            var str5 = "绿叶学习网";
+            str5 = str5.split("").join("><");
+            var arr4 = str5.split("");
+            arr4.unshift("<");
+            arr4.push(">");
+            str5 = arr4.join("");
+            document.write(str5 + "<br/>");
+            
+            // 练习
+            var str_study1 = "Rome was not build is a day";
+            var arr_study1 = str_study1.split(" ");
+            var sum_study1 = 0;
+            for(var i = 0; i < arr_study1.length; i++)
+            {
+                var arr_study1_son = arr_study1[i].split("");
+                sum_study1 += arr_study1_son.length;
+            }
+            document.write(str_study1.length + "<br/>");
+            document.write(sum_study1 + "<br/>");
+
+            function str_reverse(str) 
+            {
+               return str.split("").reverse().join("");
+            }
+
+            var str_study2 = "abcde";
+            str_study2 = str_reverse(str_study2);
+            document.write(str_study2 + "<br/>");
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
