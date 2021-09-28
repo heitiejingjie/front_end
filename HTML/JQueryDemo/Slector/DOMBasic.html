@@ -9,6 +9,10 @@
             .insert li{
                 background-color: lightblue;
             }
+
+            .delete li:nth-child(2n){
+                background-color: lightblue;
+            }
         </style>
         <script src="../../../jquery/jquery-1.12.4.min.js"></script>
         <script>
@@ -36,21 +40,161 @@
             // （3）before（）和insertBefoe（）
             // （4）after（）和insertAfter（）
             $(function () {
-                // （1）prepend（）和prependTo（）
+                // （1）prepend（）和prependTo（）  将创建的节点插入到既定元素内部的开始处
                 // （a）$（A）.prepend（B）         表示将B插入到A中
                 // （b）$（A）.prependTo（B）       表示将A插入到B中
-                var $strong = "<strong>强调的文字</strong>";
+                var $strong1 = "<strong>开始处插入文字</strong>";
+                var $strong2 = "<strong>结尾处插入文字</strong>";
                 $("#btn2").click(function () {
                     // （a）
-                    // $(".insert li").prepend($strong);
+                    // $(".insert li").prepend($strong1);
                     // （b）
-                    $($strong).prependTo(".insert li");
+                    $($strong1).prependTo(".insert li");
                   })
                 
+                // （2）append（）和appendTo（）    将创建的元素插入到既定元素内部的结尾处
+                // （a）$（A）.append（B）          表示将B插入到A中
+                // （b）$（A）.appendTo（B）        表示将A插入到B中
+                $("#btn3").click(function () {
+                    // (a)
+                    // $(".insert li").append($strong2);
+                    // (b)
+                    $($strong2).appendTo(".insert li");
+                  })
+                
+                // （3）before（）和insertBefore（） 将创建的元素插入到既定元素外部的开始处
+                // （a）$（A）.before（B）          表示将B插入到A中
+                // （b）$（A）.insertBefore（B）    表示将A插入到B中
+                $("#btn4").click(function () {
+                    // (a)
+                    // $(".insert li").before($strong1);
+                    // (b)
+                    $($strong1).insertBefore(".insert li");
+                  })
+
+                // （4）after（）和insertAfter（）  将创建的元素插入到既定元素外部的结尾处
+                // （a）$（A）.after（B）          表示将B插入到A中
+                // （b）$（A）.insertAfter（B）    表示将A插入到B中
+                $("#btn5").click(function () {
+                    // (a)
+                    // $(".insert li").after($strong2);
+                    // (b)
+                    $($strong2).insertAfter(".insert li");
+                  })
             })
             
             
+            // （三）删除元素
+            // 共有三种方法：
+            // （1）remove（）
+            // （2）detach（）
+            // （3）empty（）
+            $(function () {
+                // （1）remove（）   删除时会返回一个值，就是删除的这个元素，会彻底的删除元素，包括元素绑定的事件，会删除元素本身
+                $("#dete1").click(function () {
+                    var $li = $(".delete li:nth-child(3)").remove();
+                    $(".delete").append($li);
+                  })
+                
+                $("#exchange").click(function () {
+                    var $li1 = $(".delete li:nth-child(2)").remove();
+                    var $li2 = $(".delete li:nth-child(3)").remove();
+                    $(".delete li:nth-child(2)").after($li1);
+                    $(".delete li:nth-child(2)").before($li2);
+                  })
+                
+                // （2）detach（） 删除时会返回一个值，就是删除的这个元素，不会彻底的删除元素，不删除元素绑定的事件，会删除元阿苏本身
+                $(".delete li").click(function () {
+                    alert("哈哈哈！");
+                  })
+                $("#dete2").click(function () {
+                    var $li3 = $(".delete li:nth-child(3)").detach();
+                    $($li3).appendTo(".delete");
+                  })
+                
+                // （3）empty（）  清空后代元素，不会删除元素本身
+                $("#dete3").click(function () {
+                    var $li4 = $(".delete li:nth-child(1)").empty();
+                    // alert($li4.text);
+                  })
+              })
 
+
+            //（四）复制元素
+            // $().clone(bool)
+            // bool是一个布尔值
+            // （1）true表示复制元素所绑定的事件
+            // （2）false表示不复制元素所绑定的事件
+            $(function () {
+                $(".copy li").click(function () {
+                    alert("这就是要复制的元素")
+                  })
+                $("#clo").click(function () {
+                    var $cli1 = $(".copy li:nth-child(3)").clone(true);
+                    var $cli2 = $(".copy li:nth-child(1)").clone(false);
+                    $($cli2).appendTo(".copy");
+                  })
+              })
+            
+            
+            // （五）替换元素
+            // （1）$(A).replaceWith(B)         将A元素替换成B元素
+            // （2）$(A).replaceAll(B)          将B元素替换成A元素
+            $(function () {
+                $("#rep").click(function () {
+                    var $a = "<a href='https://www.bilibili.com' target='_blank'>b站首页</a>";
+                    // (a)
+                    // $(".replace").replaceWith($a);
+                    // (b)
+                    $($a).replaceAll(".replace");
+                  })
+              })
+            
+            
+            // （六）包裹元素
+            // （1）wrap（）            将所选元素使用其他元素分别包裹起来
+            // （2）wrapAll（）         将所选元素使用其他元素一起包裹起来
+            // （3）wrapInner（）       将所选元素的子元素或子节点使用其他元素分别包裹起来
+            $(function () {
+                $("#wra1").click(function () {
+                    // （1）wrap（）
+                    var $strong3 = "<strong></strong>";
+                    // $(".wrap .child").wrap($strong3);
+                    
+                    // （2）wrapAll（）
+                    // $(".wrap .child").wrapAll($strong3);
+
+                    // （3）wrapInner（）
+                    $(".wrap .child").wrapInner($strong3);
+                  })
+              })
+
+
+            // （七）遍历元素
+            // 使用each（）方法
+            // $().each(function(index,element){})
+            // index：是一个可选参数，它表示元素的索引号。index是从0开始的
+            // element：是一个可选参数，它表示当前元素，可以用（this参数）代替
+            // 如果需要退出each循环，可以在回调函数中返回false
+            $(function () {
+                // $("#tvs").click(function () {
+                //     $(".traversal li").each(function (index, this) {
+                //         var txt = "第" + (index+1) + "个元素";
+                //         $(this).text(txt);
+                //       })
+                //   })
+
+                // 练习
+                var arr = ["red", "orange", "yellow", "green", "blue"];
+                $("#tvs").click(function () {
+                    $(".traversal li").each(function (index) {
+                        var txt = arr[index];
+                        $(this).text(txt);
+                      })
+                  })
+                
+              })
+            
             </script>
     </head>
     <body>
@@ -64,8 +208,52 @@
         <ul class="insert">
             <li><span>这就暗示</span></li>
         </ul>
-        <input type="button" value="插入元素1" id="btn2">
-
+        <input type="button" value="内部插入元素1" id="btn2">
+        <input type="button" value="内部插入元素2" id="btn3">
+        <input type="button" value="外部插入元素1" id="btn4">
+        <input type="button" value="外部插入元素2" id="btn5">
+        <hr/>
+        <ul class="delete">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Vue.js</li>
+            <li>Node.js</li>
+        </ul>
+        <input type="button" value="删除元素1" id="dete1">
+        <input type="button" value="互换元素" id="exchange">
+        <input type="button" value="删除元素2" id="dete2">
+        <input type="button" value="删除(清空)后代元素3" id="dete3">
+        <hr/>
+        <ul class="copy">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Vue.js</li>
+            <li>Node.js</li>
+        </ul>
+        <input type="button" value="复制元素" id="clo">
+        <hr/>
+        <strong class="replace">没有什么能够阻挡</strong><br/>
+        <input type="button" value="替换元素" id="rep">
+        <hr/>
+        <div class="wrap">
+            <p class="child">HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+            <p class="child">Vue.js</p>
+            <p>Node.js</p>
+        </div>
+        <input type="button" value="包裹元素1" id="wra1">
+        <hr/>
+        <ul class="traversal">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <input type="button" value="遍历元素" id="tvs">
 
     </body>
 </html>
