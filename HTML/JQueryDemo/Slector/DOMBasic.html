@@ -5,8 +5,67 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dom基础</title>
+        <style>
+            .insert li{
+                background-color: lightblue;
+            }
+        </style>
+        <script src="../../../jquery/jquery-1.12.4.min.js"></script>
+        <script>
+            // 常见的DOM操作共有七种
+            // （一）创建元素
+            // （二）插入元素
+            // （三）删除元素
+            // （四）复制元素
+            // （五）替换元素
+            // （六）包裹元素
+            // （七）遍历元素
+
+            // （一）创建元素：使用字符串的形式来创建一个元素节点，再使用append（）、before（）的形式将创建的元素节点插入到现有的元素节点中
+            $(function () {
+                var $li = "<li>Node.js</li>";
+                $("#btn1").click(function () {
+                    $(".creat").append($li);
+                  })
+              })
+
+            
+            // （二）插入元素：共有4组方法
+            // （1）prepend（）和prependTo（）
+            // （2）append（）和appendTo（）
+            // （3）before（）和insertBefoe（）
+            // （4）after（）和insertAfter（）
+            $(function () {
+                // （1）prepend（）和prependTo（）
+                // （a）$（A）.prepend（B）         表示将B插入到A中
+                // （b）$（A）.prependTo（B）       表示将A插入到B中
+                var $strong = "<strong>强调的文字</strong>";
+                $("#btn2").click(function () {
+                    // （a）
+                    // $(".insert li").prepend($strong);
+                    // （b）
+                    $($strong).prependTo(".insert li");
+                  })
+                
+            })
+            
+            
+
+            </script>
     </head>
     <body>
-        
+        <ul class="creat">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <input type="button" value="添加元素" id="btn1">
+        <hr/>
+        <ul class="insert">
+            <li><span>这就暗示</span></li>
+        </ul>
+        <input type="button" value="插入元素1" id="btn2">
+
+
     </body>
 </html>
