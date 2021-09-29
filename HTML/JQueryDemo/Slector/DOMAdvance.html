@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM进阶</title>
+        <style>
+            .delete_attr{
+                color: brown;
+                font-weight: bolder;
+                size: 2em;
+                line-height: 2em;
+            }
+            .operation{
+                color: chartreuse;
+            }
+            .select{
+                color:coral;
+                font-weight: bold;
+                background-color: silver;
+            }
+        </style>
+        <script src="../../../jquery/jquery-1.12.4.min.js"></script>
+        <script>
+            // （一）属性操作        操作HTML的属性
+            // （1）获取属性        使用attr（）方法
+            // （2）设置属性
+            // （3）删除属性
+            // （4）prop（）方法
+
+            $(function () {
+                // (1)获取属性  
+                $("#src").click(function () {
+                    var $src = $(".img1").attr("src");
+                    alert($src);
+                  })
+                $("#alt").click(function () {
+                    var $alt = $(".img1").attr("alt");
+                    alert($alt);
+                  })
+
+                // (2)设置属性
+                var flag = true;
+                $("#set_attr").click(function () {
+                    if(flag){
+                        $(".img2").attr("src","../../../image/biqigubafan.jpg");
+                        flag = false;
+                    }
+                    else{
+                        $(".img2").attr("src","../../../image/youbibinjieyi.jpg");
+                        flag = true;
+                    }
+                  })
+                // 设置多个属性
+                $("#set_attr1").click(function () {
+                    if(flag){
+                        $(".img2").attr({src:"../../../image/biqigubafan.jpg",alt:"比企谷八幡",width:"300px",height:"300px"});
+                        flag = false;
+                    }
+                    else{
+                        $(".img2").attr({src:"../../../image/youbibinjieyi.jpg",alt:"由比滨结衣",width:"200px",height:"200px"});
+                        flag = true;
+                    }
+                  })
+                
+                // (3)删除属性
+                $("#delete").click(function () {
+                    $(".delete_attr").removeAttr("class");
+                  })
+                
+                // (4)prop（）方法与attr方法相似
+                // 具有true或false这两种取值的属性，建议使用这个方法来操作
+              })
+
+
+            // （二）样式操作
+            // （1）CSS属性操作
+            // （2）CSS类名操作
+            // （3）个别样式操作
+            $(function () {
+                // （1）css属性操作
+                // （a）获取css属性
+                $("#get_css").click(function () {
+                    var $css_attr = $(".operation").css("color");
+                    alert("你获取的值是：" + $css_attr);
+                  })
+                // （b）设置css属性
+                $("#set_css").click(function () {
+                    // (b1)设置单个属性
+                    // $(".operation").css("color","lightblue");
+                    // (b2)设置多个属性
+                    $(".operation").css({"color":"orange","font-weight":"bold","size":"3em"});
+                  })
+                
+                // (2)css类名操作
+                // (a)添加类名
+                $("#add_class").click(function () {
+                    $(".css_class_operation li:nth-child(2n+1)").addClass("select");
+                  })
+                // (b)删除类名
+                $("#remove_class").click(function () {
+                    $(".css_class_operation li:nth-child(2n+1)").removeClass("select");
+                  })
+                
+                // (3)切换class
+                // toggle()方法：检查元素是否有这个元素，如果没有就添加这个类；如果有就删除这个类
+                $("#change_class").click(function () {
+                    $(".css_class_operation li:nth-child(2n)").toggleClass("select");
+                  })
+                
+                // (3)个别样式操作
+                // （a）元素的宽高
+                // （b）元素的位置
+                // （c）滚动条的距离
+
+                // （a）元素的宽高
+                // （a1）width（）和height（）
+              })
+
+
+        </script>
+    </head>
+    <body>
+        <img src="../../../image/xuezhixaixuenai.png" alt="雪之下雪乃" width="200px" height="200px" class="img1">
+        <input type="button" value="获取src属性" id="src">        
+        <input type="button" value="获取alt属性" id="alt"> <br/>
+        <img src="../../../image/youbibinjieyi.jpg" alt="由比滨结衣" class="img2" width="200px" height="200px">
+        <input type="button" value="设置单个属性" id="set_attr"> 
+        <input type="button" value="设置多个属性" id="set_attr1"> 
+        <p class="delete_attr">wojiushiwo</p>
+        <input type="button" value="删除属性" id="delete">
+        <hr/>
+        <p class="operation">我想超越这平凡的生活</p>
+        <input type="button" value="获取css属性" id="get_css">
+        <input type="button" value="设置css属性" id="set_css">
+        <ul class="css_class_operation">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Vue.js</li>
+            <li>Node.js</li>
+        </ul>
+        <input type="button" value="添加类名" id="add_class">
+        <input type="button" value="删除类名" id="remove_class">
+        <input type="button" value="切换类名" id="change_class">
+    </body>
+</html>
