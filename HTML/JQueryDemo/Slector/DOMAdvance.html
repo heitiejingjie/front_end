@@ -20,6 +20,11 @@
                 font-weight: bold;
                 background-color: silver;
             }
+            .area>.child1,.area>.child2{
+              border: cadetblue solid 2px;
+              width: 100px;
+              height: 50px;
+            }
         </style>
         <script src="../../../jquery/jquery-1.12.4.min.js"></script>
         <script>
@@ -114,8 +119,23 @@
                 // （b）元素的位置
                 // （c）滚动条的距离
 
-                // （a）元素的宽高
-                // （a1）width（）和height（）
+                // （a）设置元素的宽高：以下方法一般只会用到第一组
+                // （a1）width（）和height（）                  范围是内容区域（width）
+                // （a2）innerwidth（）和innerheight（）        范围是内容区域（width）+内边距（padding）
+                // （a3）outerwidth（）和outerheight（）        范围是内容区域（width）+内边距（padding）+外边框（border）
+                $("#get_area").click(function () {
+                    var $width1 = $(".area .child1").width();
+                    alert($width1);
+                  })
+                $("#set_area").click(function () {
+                    $(".area .child2").height(20);
+                  })
+
+                // （b）设置元素的位置
+                // （b1）offset（）：设置当前元素相对于“当前文档”即浏览器窗口的位置（绝对位置）
+                // （b2）position（）：设置当前元素相对于祖先元素的位置（相对位置）
+                
+
               })
 
 
@@ -144,5 +164,13 @@
         <input type="button" value="添加类名" id="add_class">
         <input type="button" value="删除类名" id="remove_class">
         <input type="button" value="切换类名" id="change_class">
+        <hr/>
+        <div class="area">
+          <div class="child1"></div>
+          <div class="child2"></div>
+        </div>
+        <span>获取第一个区域的大小</span><input type="button" value="获取" id="get_area"><br/>
+        <span>获取第二个区域的大小</span><input type="button" value="设置" id="set_area">
+
     </body>
 </html>
