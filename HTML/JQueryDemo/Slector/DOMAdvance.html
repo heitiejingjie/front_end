@@ -25,6 +25,28 @@
               width: 100px;
               height: 50px;
             }
+            .box1,.box2{
+              width: 100px;
+              height: 100px;
+              display: inline-block;
+              border: blue 2px solid;
+            }
+            .flant{
+              position: relative;
+              width: 100px;
+              height: 100px;
+              background-color: burlywood;
+            }
+            #son{
+              position:absolute;
+              width: 20px;
+              height: 20px;
+              top:20px;
+              left: 30px;
+              background-color: chartreuse;
+            }
+
+
         </style>
         <script src="../../../jquery/jquery-1.12.4.min.js"></script>
         <script>
@@ -134,8 +156,16 @@
                 // （b）设置元素的位置
                 // （b1）offset（）：设置当前元素相对于“当前文档”即浏览器窗口的位置（绝对位置）
                 // （b2）position（）：设置当前元素相对于祖先元素的位置（相对位置）
+                var box1_top =  $(".box1").offset().top;
+                console.log("box1" + "距离顶部" + box1_top + "px");
+                var box2_left = $(".box2").offset().left;
+                console.log("box2距离左部" + box2_left + "px");
                 
-
+                $(function () {  
+                  var son_top = $("#son").position().top;
+                  var son_left = $("#son").position().left;
+                  console.log("son距离顶部" + son_top + "px\n" + "son距离左部" + son_left + "px");
+                })
               })
 
 
@@ -172,6 +202,11 @@
         <span>获取第一个区域的大小</span><input type="button" value="获取" id="get_area"><br/>
         <span>获取第二个区域的大小</span><input type="button" value="设置" id="set_area">
         <hr/>
-        
+        <div class="box1"></div>
+        <div class="box2"></div>
+
+        <div class="flant">
+          <div id="son"></div>
+        </div>
     </body>
 </html>
